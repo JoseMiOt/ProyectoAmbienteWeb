@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!-- TRABAJO DE LA MA;ANA DEL LUNES -->
-
 
 <html lang="en">
 <head>
