@@ -1,95 +1,40 @@
 <?php 
 
-include_once 'View/generales.php';
+include_once 'generales.php';
+
 ?>
 
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <?php
-        //login(); 
-        //---------> Hay que agregarle el CSS y JS... No se porque no referencia (Descomentar linea de arriba para probar)
-    ?>
+
+<?php
+        login(); 
+?>
+
 </head>
 <body>
-<div class="form">
-      
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
-      
-      <div class="tab-content">
-        <div id="signup">   
-          <h1>Sign Up for Free</h1>
-          
-          <form action="/" method="post">
-          
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <button type="submit" class="button button-block"/>Get Started</button>
-          
-          </form>
-
-        </div>
-        
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
-
-        </div>
-        
-      </div><!-- tab-content -->
-      
-</div> <!-- /form -->
+   <div class="container">
+     <div class="login-container">
+       <div class="register">
+         <h2>Registrarse</h2>
+         <form action="">
+           <input type="text" placeholder="Nombre" class="nombre">
+           <input type="text" placeholder="Correo" class="correo">
+           <input type="password" placeholder="Contraseña" class="pass">
+           <input type="password" placeholder="Confirma contraseña" class="repass">
+           <input type="submit" class="submit" value="REGISTRARSE">
+         </form>
+       </div>
+       <div class="login">
+         <h2>Iniciar Sesión</h2>
+         <div class="login-items">
+           <button class="fb"><i class="fab fa-facebook-f"></i> Acceder con Facebook</button>
+           <button class="tw"><i class="fab fa-twitter"></i> Acceder con Twitter</button>
+           <button class="correo"><i class="fas fa-envelope"></i> Acceder con Correo</button>
+         </div>
+       </div>
+     </div>
+   </div>
 </body>
 </html>

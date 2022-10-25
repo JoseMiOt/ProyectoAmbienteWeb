@@ -28,9 +28,7 @@ include_once 'View/generales.php';
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html">
-								<img src="assets/img/logo.png" alt="">
-							</a>
+							<img src="assets/img/logo.png" alt="">
 						</div>
 						<!-- logo -->
 
@@ -47,7 +45,7 @@ include_once 'View/generales.php';
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<a class="usuario" href="register.html"></i><img src="assets/img/usuario.png" alt=""></a>
+										<a class="usuario" href="View/login.php"></i><img src="assets/img/usuario.png" alt=""></a>
 									</div>
 								</li>
 							</ul>
