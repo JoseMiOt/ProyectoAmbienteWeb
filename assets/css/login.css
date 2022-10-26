@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -68,7 +69,7 @@
   }
    
   .register::after{
-    content: '&amp;gt;';
+    content: '';
     position: absolute;
     width: 25px;
     height: 25px;
@@ -94,37 +95,31 @@
     margin-bottom: 45px;
   }
    
-  .login button i{
-    position: absolute;
-    top: 12px; 
-    left: 12px;
+  .login input{
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom: 1px solid #a8a8a8;
+    color: #333;
   }
    
-  .login button{
-    width: 100%;
-    margin: 15px 0px;
+  .login input:active,
+  .login input:focus{
+    outline: none;
+  }
+   
+  .login .submit{
+    width: auto;
     padding: 10px;
+    background: #f17108;
+    color: #fff;
+    font-size: 12px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
     cursor: pointer;
-    position: relative;
-  }
-   
-  .login .fb{
-    background: #3b5999;
-    border-style: none;
-    color: #fff;
-  }
-   
-  .login .tw{
-    background: #55acef;
-    border-style: none;
-    color: #fff;
-  }
-   
-  .login .correo{
-    background: #33d4ce;
-    border-style: none;
-    color: #fff;
   }
    
   @media only screen and (max-width: 540px){
@@ -143,4 +138,21 @@
       transform: translateX(-50%) rotate(90deg);
     }
   }
-  
+
+  .back{
+    background-image: linear-gradient(to bottom right, #1ab6b6, #4cac6e);
+    padding: 10px;
+  }
+
+  .login a{
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom: 1px solid #a8a8a8;
+    color: #333;
+  }
+   
