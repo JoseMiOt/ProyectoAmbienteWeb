@@ -1,25 +1,31 @@
-<?php 
+<?php
+if (session_status() == PHP_SESSION_NONE)
+	{
+		session_start();
+	}
+	include_once __DIR__ . '\View\generales.php';
+	include_once __DIR__ . '\Controller\UsuarioController.php';
 
-include_once 'View/generales.php';
 ?>
 
 <!DOCTYPE html>
 
 <head>
-    <?php 
-        index();
-    ?>
+	<?php
+		index();
+	?>
 </head>
+
 <body>
 	
 	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-	
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
+
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -41,11 +47,13 @@ include_once 'View/generales.php';
 								<li><a href="contact.html">Contacto</a></li>
 								<li><a href="shop.html">Farmacias</a></li>
 								<li><a href="news.html">Noticias</a></li>
+								<li> <?php if ($_SESSION != null) {
+									echo "Bienvenido ", $_SESSION["sesionNombre"];} ?></li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<a class="usuario" href="View/login.php"></i><img src="assets/img/usuario.png" alt=""></a>
+										<a class="usuario" href="View/login.php"></i><img src="assets/img/usuario.png" alt=""></a>										
 									</div>
 								</li>
 							</ul>
@@ -78,7 +86,7 @@ include_once 'View/generales.php';
 		</div>
 	</div>
 	<!-- end search arewa -->
-	
+
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
@@ -179,13 +187,13 @@ include_once 'View/generales.php';
 	</div>
 	<!-- end products -->
 
-	
+
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2022,  All Rights Reserved.<br>
+					<p>Copyrights &copy; 2022, All Rights Reserved.<br>
 						Distribuido Por - Equipo de Desarrollo #3
 					</p>
 				</div>
@@ -203,10 +211,11 @@ include_once 'View/generales.php';
 		</div>
 	</div>
 	<!-- end copyright -->
-	
-	<?php 
-        footerIndex();
-    ?>
+
+	<?php
+	footerIndex();
+	?>
 
 </body>
+
 </html>
