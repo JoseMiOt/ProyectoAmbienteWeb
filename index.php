@@ -42,18 +42,20 @@ if (session_status() == PHP_SESSION_NONE)
 						<nav class="main-menu">
 							<ul>
 								<li class="current-list-item"><a href="#">Inicio</a></li>
-								<li><a href="about.html">Acerca De</a></li>
-								<li><a href="shop.html">Catálogo</a></li>
-								<li><a href="contact.html">Contacto</a></li>
-								<li><a href="shop.html">Farmacias</a></li>
-								<li><a href="news.html">Noticias</a></li>
+								<li><a href="#">Acerca De</a></li>
+								<li><a href="#">Catálogo</a></li>
+								<li><a href="View/contact.php">Contacto</a></li>
+								<li><a href="#">Farmacias</a></li>
+
 								<li> <?php if ($_SESSION != null) {
-									echo "Bienvenido ", $_SESSION["sesionNombre"];} ?></li>
+									echo "Bienvenido ", $_SESSION["sesionNombre"];} ?>
+								</li>
+
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<a class="usuario" href="View/login.php"></i><img src="assets/img/usuario.png" alt=""></a>										
+										<a class="usuario" href="View/login.php"><i class="fas fa-user"></i></a>										
 									</div>
 								</li>
 							</ul>
@@ -85,7 +87,7 @@ if (session_status() == PHP_SESSION_NONE)
 			</div>
 		</div>
 	</div>
-	<!-- end search arewa -->
+	<!-- end search area -->
 
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
