@@ -4,6 +4,8 @@
 
 <!DOCTYPE html>
 <head>
+	<!-- title -->
+	<title>Contacto</title>
 	<?php
     pages();
     ?>
@@ -26,13 +28,12 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="../index.php">
+							<a href="inicio.php">
 								<img src="../assets/img/logo.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
 
-						<!-- menu start -->
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
@@ -44,7 +45,7 @@
 
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="" href="carrito.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 										<a class="usuario" href="login.php"><i class="fas fa-user"></i></a>										
 									</div>
@@ -70,7 +71,7 @@
 					<div class="search-bar">
 						<div class="search-bar-tablecell">
 							<h3>Buscar Por:</h3>
-							<input type="text" placeholder="Keywords">
+							<input type="text" placeholder="Palabras Clave:">
 							<button type="submit">Buscar <i class="fas fa-search"></i></button>
 						</div>
 					</div>
