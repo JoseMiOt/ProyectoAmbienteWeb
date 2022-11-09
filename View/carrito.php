@@ -31,7 +31,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="inicio.php">
+							<a href="../index.php">
 								<img src="../assets/img/logo.png" alt="">
 							</a>
 						</div>
@@ -42,7 +42,7 @@
 							<ul>
 								<li><a href="../index.php">Inicio</a></li>
 								<li><a href="#">Acerca De</a></li>
-								<li><a href="../index.php">Catálogo</a></li>
+								<li><a href="catalogo.php">Catálogo</a></li>
 								<li><a href="contact.php">Contacto</a></li>
 								<li><a href="#">Farmacias</a></li>
 								
