@@ -25,4 +25,28 @@ if(isset($_POST["bt_inicio_sesion"])) {
         por eso no se puede acceder*/
     }
 }
+
+if(isset($_POST["bt_registrarse"]))
+{
+    $Nombre = $_POST["txtNombre"];
+    $Apellidos = $_POST["txtApellidos"];
+    $Usuario = $_POST["txtUsuario"];
+    $Correo = $_POST["txtCorreo"];
+    $Contrasenna = $_POST["txtContrasenna"];
+    $ContrasennaDos = $_POST["txtConfirContrasenna"];
+    $Rol = 2;
+    if($Contrasenna == $ContrasennaDos) {
+        AgregarUsuarioModel($Nombre, $Apellidos, $Usuario, $Correo, $Contrasenna, $ContrasennaDos, $Rol);
+        header("Location: ..\index.php");
+    }
+    else {
+        echo '
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            alert("Las contraseñas no coinciden");
+        </script>
+        ';
+    }
+    
+}
 ?>

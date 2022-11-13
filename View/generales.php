@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+
 
   function index()
   {
@@ -51,7 +53,8 @@
         <!-- sticker js -->
         <script src="assets/js/sticker.js"></script>
         <!-- main js -->
-        <script src="assets/js/main.js"></script>';
+        <script src="assets/js/main.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>';
   }
 
   function login()

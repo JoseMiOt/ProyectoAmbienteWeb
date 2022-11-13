@@ -24,12 +24,12 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
             <div class="login-container">
                 <div class="register">
                     <h2>Registrarse</h2>
-                    <input type="text" placeholder="Nombre" class="nombre">
-                    <input type="text" placeholder="Apellidos" class="apellido">
-                    <input type="text" placeholder="Usuario" class="usuario">
-                    <input type="text" placeholder="Correo" class="correo">
-                    <input type="password" placeholder="Contraseña" class="pass">
-                    <input type="password" placeholder="Confirma contraseña" class="repass">
+                    <input type="text" placeholder="Nombre" class="nombre" id="txtNombre" name="txtNombre">
+                    <input type="text" placeholder="Apellidos" class="apellido" id="txtApellidos" name="txtApellidos">
+                    <input type="text" placeholder="Usuario" class="usuario" id="txtUsuario" name="txtUsuario">
+                    <input type="text" placeholder="Correo" class="correo" id="txtCorreo" name="txtCorreo">
+                    <input type="password" placeholder="Contraseña" class="pass" id="txtContrasenna" name="txtContrasenna">
+                    <input type="password" placeholder="Confirma contraseña" class="repass" id="txtConfirContrasenna" name="txtConfirContrasenna">
                     <input type="submit" class="submit" value="REGISTRARSE" id="bt_registrarse" name="bt_registrarse">
                 </div>
                 <div class="login">
@@ -43,6 +43,9 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
             </div>
         </div>
     </form>
+    <?php
+	    footerIndex();
+    ?>
 </body>
 
 </html>

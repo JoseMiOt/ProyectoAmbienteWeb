@@ -12,4 +12,14 @@ function ValidarUsuario($correo, $clave)
     return $datos;
 }
 
+function AgregarUsuarioModel($Nombre,$Apellidos,$Usuario,$Correo,$Contrasenna,$ContrasennaDos,$Rol)
+{
+    $conn = OpenBD();
+
+    $procedimiento = "call sp_agregar_usuario('$Nombre', '$Apellidos', '$Usuario', '$Correo', '$Contrasenna', $Rol);";
+    $conn -> query($procedimiento);
+
+    OpenBD($conn);
+}
+
 ?>
