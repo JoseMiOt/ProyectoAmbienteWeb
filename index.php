@@ -50,7 +50,8 @@ if (session_status() == PHP_SESSION_NONE)
 								<li><a href="View/catalogo.php">Catálogo</a></li>
 								<li><a href="View/contact.php">Contacto</a></li>
 								<li><a href="#">Farmacias</a></li>
-
+								<li> <?php if ($_SESSION != null) {
+									echo "Bienvenido ", $_SESSION["sesionNombre"];} ?></li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="View/carrito.php"><i class="fas fa-shopping-cart"></i></a>
