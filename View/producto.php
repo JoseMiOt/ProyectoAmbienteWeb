@@ -9,7 +9,7 @@
 	<title>Producto</title>
 
 	<?php
-		pages();
+	pages();
 	?>
 
 </head>
@@ -41,10 +41,10 @@
 						<nav class="main-menu">
 							<ul>
 								<li><a href="../index.php">Inicio</a></li>
-								<li><a href="#">Acerca De</a></li>
+								<li><a href="acerca.php">Acerca De</a></li>
 								<li><a href="catalogo.php">Catálogo</a></li>
 								<li><a href="contact.php">Contacto</a></li>
-								<li><a href="#">Farmacias</a></li>
+								<li><a href="#">Administración</a></li>
 
 								<li>
 									<div class="header-icons">

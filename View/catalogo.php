@@ -1,5 +1,6 @@
 <?php
 	include_once __DIR__ . '\generales.php';
+	include_once __DIR__ . '\..\Controller\ProductoController.php';
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +8,7 @@
 <head>
 	<title>FarmaWeb</title>
 	<?php
-    pages();
+	pages();
     ?>
 </head>
 
@@ -39,10 +40,10 @@
 						<nav class="main-menu">
 							<ul>
 								<li><a href="../index.php">Inicio</a></li>
-								<li><a href="#">Acerca De</a></li>
+								<li><a href="acerca.php">Acerca De</a></li>
 								<li class="current-list-item"><a href="">Catálogo</a></li>
 								<li><a href="contact.php">Contacto</a></li>
-								<li><a href="#">Farmacias</a></li>
+								<li><a href="#">Administración</a></li>
 
 								<li>
 									<div class="header-icons">
@@ -103,6 +104,9 @@
 
 
 			<div class="row product-lists">
+				<?php
+					//ConsultaProductos();
+				?>
 				<div class="col-lg-4 col-md-6 text-center strawberry">
 					<div class="single-product-item">
 						<div class="product-image">
@@ -208,7 +212,7 @@
 	<!-- end copyright -->
 
 	<?php
-	pagesFooter();
+		pagesFooter();
 	?>
 
 </body>
