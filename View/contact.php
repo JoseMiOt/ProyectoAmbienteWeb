@@ -28,7 +28,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="inicio.php">
+							<a href="../index.php">
 								<img src="../assets/img/logo.png" alt="">
 							</a>
 						</div>
@@ -38,10 +38,10 @@
 						<nav class="main-menu">
 							<ul>
 								<li><a href="../index.php">Inicio</a></li>
-								<li><a href="about.html">Acerca De</a></li>
-								<li><a href="shop.html">Catálogo</a></li>
+								<li><a href="#">Acerca De</a></li>
+								<li><a href="catalogo.php">Catálogo</a></li>
 								<li class="current-list-item"><a href="contact.html">Contacto</a></li>
-								<li><a href="shop.html">Farmacias</a></li>
+								<li><a href="#">Farmacias</a></li>
 
 								<li>
 									<div class="header-icons">
