@@ -5,6 +5,7 @@ if (session_status() == PHP_SESSION_NONE)
 	}
 	include_once __DIR__ . '\View\generales.php';
 	include_once __DIR__ . '\Controller\UsuarioController.php';
+	include_once __DIR__ . '\Controller\ProductoController.php';
 
 ?>
 
@@ -101,8 +102,8 @@ if (session_status() == PHP_SESSION_NONE)
 								<p class="subtitle">Tú medicina está aquí</p>
 								<h1>Cuida La Salud Y Tu Bolsillo</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visitar Tienda</a>
-									<a href="contact.html" class="bordered-btn">Contáctanos</a>
+									<a href="View/catalogo.php" class="boxed-btn">Visitar Tienda</a>
+									<a href="View/contact.php" class="bordered-btn">Contáctanos</a>
 								</div>
 							</div>
 						</div>
@@ -120,8 +121,8 @@ if (session_status() == PHP_SESSION_NONE)
 								<p class="subtitle">Justo Lo Que Necesitas</p>
 								<h1>Porque La Salud Importa</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visitar Tienda</a>
-									<a href="contact.html" class="bordered-btn">Contáctanos</a>
+									<a href="View/catalogo.php" class="boxed-btn">Visitar Tienda</a>
+									<a href="View/contact.php" class="bordered-btn">Contáctanos</a>
 								</div>
 							</div>
 						</div>
@@ -139,8 +140,8 @@ if (session_status() == PHP_SESSION_NONE)
 								<p class="subtitle">El Servicio Que Mereces</p>
 								<h1>Vive Sanamente Con FarmaWeb</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visitar Tienda</a>
-									<a href="contact.html" class="bordered-btn">Contáctanos</a>
+									<a href="View/catalogo.php" class="boxed-btn">Visitar Tienda</a>
+									<a href="View/contact.php" class="bordered-btn">Contáctanos</a>
 								</div>
 							</div>
 						</div>
@@ -208,36 +209,9 @@ if (session_status() == PHP_SESSION_NONE)
 			</div>
 
 			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/producto-img-4.jpg" alt=""></a>
-						</div>
-						<h3>Chapstick Yerbabuena Blister</h3>
-						<p class="product-price"><span>Chapstick</span> ₡2126 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/producto-img-5.png" alt=""></a>
-						</div>
-						<h3>Crema Pañalito 235g</h3>
-						<p class="product-price"><span>Pañalito</span> ₡2477 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/producto-img-6.jpg" alt=""></a>
-						</div>
-						<h3>Jabón Neutro 100g</h3>
-						<p class="product-price"><span>Asepxia</span> ₡2585 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
-					</div>
-				</div>
+				<?php
+				ConsultaProductoInicio();
+				?>
 			</div>
 
 		</div>
@@ -268,7 +242,7 @@ if (session_status() == PHP_SESSION_NONE)
                     <div class="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
                     <!--Countdown Timer-->
                     <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2022/12/25"><div class="counter-column"><div class="inner"><span class="count">00</span>Días</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Horas</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Segs</div></div></div></div>
-                	<a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
+                	<a href="#" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
                 </div>
             </div>
         </div>
@@ -349,7 +323,7 @@ if (session_status() == PHP_SESSION_NONE)
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<div class="abt-bg">
+					<div class="abt2-bg">
 						<img src="assets/img/farm10.jpg"></img>
 					</div>
 				</div>
@@ -359,7 +333,7 @@ if (session_status() == PHP_SESSION_NONE)
 						<h2>Somos <span class="orange-text">FarmaWeb</span></h2>
 						<p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-						<a href="about.html" class="boxed-btn mt-4">Conócenos</a>
+						<a href="View/acerca.php" class="boxed-btn mt-4">Conócenos</a>
 					</div>
 				</div>
 			</div>
@@ -372,7 +346,7 @@ if (session_status() == PHP_SESSION_NONE)
     	<div class="container">
         	<h3>¡Se acerca Diciembre <br> con grandes <span class="orange-text">Descuentos...</span></h3>
             <div class="sale-percent"><span>Rebajas <br> hasta del</span>50% <span></span></div>
-            <a href="shop.html" class="cart-btn btn-lg">Compra Ahora</a>
+            <a href="View/catalogo.php" class="cart-btn btn-lg">Compra Ahora</a>
         </div>
     </section>
 	<!-- end shop banner -->
@@ -393,7 +367,7 @@ if (session_status() == PHP_SESSION_NONE)
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-1"></div></a>
+						<a href=""><div class="latest-news-bg news-bg-1"></div></a>
 						<div class="news-text-box">
 							
 							<p class="blog-meta">
@@ -401,13 +375,13 @@ if (session_status() == PHP_SESSION_NONE)
 								<span class="date"><i class="fas fa-compass"></i> San José, Curridabat</span>
 							</p>
 							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
+							<a href="" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-2"></div></a>
+						<a href=""><div class="latest-news-bg news-bg-2"></div></a>
 						<div class="news-text-box">
 							
 							<p class="blog-meta">
@@ -415,13 +389,13 @@ if (session_status() == PHP_SESSION_NONE)
 								<span class="date"><i class="fas fa-compass"></i> Cartago, Paraíso</span>
 							</p>
 							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
+							<a href="" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
 					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-3"></div></a>
+						<a href=""><div class="latest-news-bg news-bg-3"></div></a>
 						<div class="news-text-box">
 							
 							<p class="blog-meta">
@@ -429,14 +403,14 @@ if (session_status() == PHP_SESSION_NONE)
 								<span class="date"><i class="fas fa-compass"></i> San José, Sabanilla</span>
 							</p>
 							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
+							<a href="" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<a href="news.html" class="boxed-btn">Más Farmacias</a>
+					<a href="" class="boxed-btn">Más Farmacias</a>
 				</div>
 			</div>
 		</div>

@@ -40,7 +40,7 @@
 								<li><a href="../index.php">Inicio</a></li>
 								<li><a href="acerca.php">Acerca De</a></li>
 								<li><a href="catalogo.php">Catálogo</a></li>
-								<li class="current-list-item"><a href="contact.html">Contacto</a></li>
+								<li class="current-list-item"><a href="contact.php">Contacto</a></li>
 								<li><a href="#">Administración</a></li>
 
 								<li>

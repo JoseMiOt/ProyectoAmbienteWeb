@@ -2070,7 +2070,7 @@ a.video-play-btn {
 }
 
 .abt-bg {
-  background-image: url(../img/farm6.jpg);
+  background-image: url(../img/farm7.png);
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -2083,6 +2083,29 @@ a.video-play-btn {
 }
 
 .abt-bg:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: #051922;
+  opacity: 0.3;
+}
+
+.abt2-bg {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.abt2-bg:after {
   position: absolute;
   left: 0;
   top: 0;

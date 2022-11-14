@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3308
--- Tiempo de generación: 13-11-2022 a las 23:55:45
+-- Tiempo de generación: 14-11-2022 a las 23:20:23
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -64,7 +64,37 @@ END$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consulta_productos` ()   BEGIN
 
 SELECT * 
-FROM tb_producto;
+FROM tb_producto
+ORDER BY nombre_prod;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consulta_producto_cat` (IN `pId_tipo_med` INT, IN `pId_producto` INT)   BEGIN
+
+SELECT *
+FROM tb_producto
+WHERE id_tipo_med = pId_tipo_med AND
+id_producto != pId_producto
+ORDER BY nombre_prod ASC
+LIMIT 3;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consulta_producto_id` (IN `pId_producto` INT)   BEGIN
+
+SELECT U.*, T.categoria_med AS categoria
+FROM tb_producto U
+INNER JOIN tb_categoria_producto T ON U.id_tipo_med = T.id_tipo_med
+WHERE id_producto = pId_producto;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consulta_producto_inicio` ()   BEGIN
+
+SELECT * 
+FROM tb_producto
+ORDER BY RAND()
+LIMIT 3;
 
 END$$
 
@@ -800,12 +830,12 @@ CREATE TABLE `tb_producto` (
 --
 
 INSERT INTO `tb_producto` (`id_producto`, `marca`, `nombre_prod`, `descrip_prod`, `cant_almacen`, `precio`, `url`, `id_tipo_med`, `id_farmacia`) VALUES
-(1, 'Chapstick', 'Chapstick Yerbabuena Blister', 'Ayuda a curar y prevenir los labios secos, agrietados.', 10, '2126.00', '../assets/img/products/producto-img-4.jpg', 1, 1),
-(2, 'Migasa', 'Algodón Migasa 50g', 'Suave y absorbente para cuidado y limpieza personal, heridas abiertas y aplicación de medicamentos.', 11, '201.00', '../assets/img/products/producto-img-2.jpg', 1, 1),
-(3, 'Malick', 'Alcohol 250ml', 'Alcohol líquido, con un alto poder biocida, diseñado para la asepsia de las manos, fabricado con etanol 70-90%. Para eliminar el 99.9% de bacterias, virus y hongos, previniendo del contagio de influenza.', 2, '607.00', '../assets/img/products/producto-img-1.png', 1, 1),
-(4, 'Colgate', 'Cepillo Slim Soft 2x1', 'Cabeza pequeña y delgada para alcanzar las zonas de difícil acceso. Cuello flexible que ayuda a absorber la tensión durante el cepillado agresivo. Mango de caucho ergonómico para un agarre cómodo.', 47, '2923.00', '../assets/img/products/producto-img-3.png', 2, 1),
-(5, 'Pañalito', 'Crema Pañalito 235g', 'Indicada para prevención y tratamiento de la dermatitis causada por heces, orina o sudoración en el área del pañal, excoriaciones, irritaciones, quemaduras, lesiones de los pliegues y llagas.', 23, '2477.00', '../assets/img/products/producto-img-5.png', 1, 1),
-(6, 'Asepxia', 'Jabón Neutro 100g', 'El jabón es neutro cuando tiene un pH de 7, la mitad de la tabla de pH, pero la mayoría de los jabones que se venden como neutros tienen un pH similar al de nuestra piel, el 5,5.', 19, '2585.00', '../assets/img/products/producto-img-6.jpg', 1, 1);
+(1, 'Chapstick', 'Chapstick Yerbabuena Blister', 'Ayuda a curar y prevenir los labios secos, agrietados.', 10, '2126.00', 'assets/img/products/producto-img-4.jpg', 1, 1),
+(2, 'Migasa', 'Algodón Migasa 50g', 'Suave y absorbente para cuidado y limpieza personal, heridas abiertas y aplicación de medicamentos.', 11, '201.00', 'assets/img/products/producto-img-2.jpg', 1, 1),
+(3, 'Malick', 'Alcohol 250ml', 'Alcohol líquido, con un alto poder biocida, diseñado para la asepsia de las manos, fabricado con etanol 70-90%. Para eliminar el 99.9% de bacterias, virus y hongos, previniendo del contagio de influenza.', 2, '607.00', 'assets/img/products/producto-img-1.png', 1, 1),
+(4, 'Colgate', 'Cepillo Slim Soft 2x1', 'Cabeza pequeña y delgada para alcanzar las zonas de difícil acceso. Cuello flexible que ayuda a absorber la tensión durante el cepillado agresivo. Mango de caucho ergonómico para un agarre cómodo.', 47, '2923.00', 'assets/img/products/producto-img-3.png', 2, 1),
+(5, 'Pañalito', 'Crema Pañalito 235g', 'Indicada para prevención y tratamiento de la dermatitis causada por heces, orina o sudoración en el área del pañal, excoriaciones, irritaciones, quemaduras, lesiones de los pliegues y llagas.', 23, '2477.00', 'assets/img/products/producto-img-5.png', 1, 1),
+(6, 'Asepxia', 'Jabón Neutro 100g', 'El jabón es neutro cuando tiene un pH de 7, la mitad de la tabla de pH, pero la mayoría de los jabones que se venden como neutros tienen un pH similar al de nuestra piel, el 5,5.', 19, '2585.00', 'assets/img/products/producto-img-6.jpg', 1, 1);
 
 -- --------------------------------------------------------
 

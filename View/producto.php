@@ -1,5 +1,8 @@
 <?php
 	include_once __DIR__ . '\generales.php';
+	include_once __DIR__ . '\..\Controller\ProductoController.php';
+
+	$datos = ConsultaProductoId($_GET["q"]);
 ?> 
 
 <!DOCTYPE html>
@@ -105,27 +108,27 @@
 			<div class="row">
 				<div class="col-md-5">
 					<div class="single-product-img">
-						<img src="../assets/img/products/producto-img-3.png" alt="">
+						<img src="<?php echo "../".$datos["url"] ?>" alt="">
 					</div>
 				</div>
 				<div class="col-md-7">
 					<div class="single-product-content">
-						<h3>Cepillo Slim Soft 2x1</h3>
-						<p class="single-product-pricing"><span>Colgate</span> ₡2923</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
+						<h3><?php echo $datos["nombre_prod"] ?></h3>
+						<p class="single-product-pricing"><span><?php echo $datos["marca"] ?></span> ₡<?php echo $datos["precio"] ?></p>
+						<p><?php echo $datos["descrip_prod"] ?></p>
 						<div class="single-product-form">
 							<form action="index.html">
 								<input type="number" placeholder="0">
 							</form>
 							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
-							<p><strong>Categorias: </strong>Higiene</p>
+							<p><strong>Categorias: </strong><?php echo $datos["categoria"] ?></p>
 						</div>
 						<h4>Compartir:</h4>
 						<ul class="product-share">
-							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href=""><i class="fab fa-twitter"></i></a></li>
-							<li><a href=""><i class="fab fa-instagram"></i></a></li>
-							<li><a href=""><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="https://es-la.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://cr.linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -147,36 +150,9 @@
 			</div>
             
 			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="../assets/img/products/producto-img-4.jpg" alt=""></a>
-						</div>
-						<h3>Chapstick Yerbabuena Blister</h3>
-						<p class="product-price"><span>Chapstick</span> ₡2126 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="../assets/img/products/producto-img-5.png" alt=""></a>
-						</div>
-						<h3>Crema Pañalito 235g</h3>
-						<p class="product-price"><span>Pañalito</span> ₡2477 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="../assets/img/products/producto-img-6.jpg" alt=""></a>
-						</div>
-						<h3>Jabón Neutro 100g</h3>
-						<p class="product-price"><span>Asepxia</span> ₡2585 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
-					</div>
-				</div>
+				<?php
+				ConsultaProductoCat($datos["id_tipo_med"], $datos["id_producto"]);
+				?>
 			</div>
 
 		</div>
