@@ -40,6 +40,12 @@ if (session_status() == PHP_SESSION_NONE)
 							<a href="">
 								<img src="assets/img/logo.png" alt="">
 							</a>
+							<?php //Mejorar color, forma de visualización
+								if ($_SESSION != null)
+								{
+								echo "Bienvenido ", $_SESSION["sesionNombre"];
+								}
+							?>
 						</div>
 						<!-- logo -->
 
@@ -51,13 +57,19 @@ if (session_status() == PHP_SESSION_NONE)
 								<li><a href="View/catalogo.php">Catálogo</a></li>
 								<li><a href="View/contact.php">Contacto</a></li>
 								<li><a href="#">Administración</a></li>
-
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="View/carrito.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<a class="usuario" href="View/login.php"><i class="fas fa-user"></i></a>										
+										<a class="usuario" href="View/login.php"><i class="fas fa-user"></i></a>
+										<div>
+											<form action="" method="post">
+											<input type="submit" class="submit" value="Cerrar Sesión" id="btn_Cerrar" name="btn_Cerrar">
+												<!--<img src="assets/img/log-out.png" height="15" width="20"/>-->
+											</form>
+										</div>
 									</div>
+									
 								</li>
 							</ul>
 						</nav>

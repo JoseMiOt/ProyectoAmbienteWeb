@@ -21,8 +21,6 @@ if(isset($_POST["bt_inicio_sesion"])) {
         header("Location: ..\index.php");
     }else {
         header("Location: ..\View\login.php");
-        /*Seria bueno ponerle un js que diga que el usuario o contraseña son incorrectas y
-        por eso no se puede acceder*/
     }
 }
 
@@ -35,18 +33,19 @@ if(isset($_POST["bt_registrarse"]))
     $Contrasenna = $_POST["txtContrasenna"];
     $ContrasennaDos = $_POST["txtConfirContrasenna"];
     $Rol = 2;
-    if($Contrasenna == $ContrasennaDos) {
-        AgregarUsuarioModel($Nombre, $Apellidos, $Usuario, $Correo, $Contrasenna, $ContrasennaDos, $Rol);
-        header("Location: ..\index.php");
-    }
-    else {
-        echo '
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script>
-            alert("Las contraseñas no coinciden");
-        </script>
-        ';
-    }
-    
+    AgregarUsuarioModel($Nombre, $Apellidos, $Usuario, $Correo, $Contrasenna, $ContrasennaDos, $Rol);
+    header("Location: ..\index.php");
 }
+
+
+if(isset($_POST["btn_Cerrar"]))
+{
+    if (session_status() != PHP_SESSION_NONE)
+        session_destroy();
+        
+    header("Location: ..\View\login.php");
+}
+
+
+
 ?>

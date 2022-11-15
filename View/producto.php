@@ -37,6 +37,12 @@
 							<a href="../index.php">
 								<img src="../assets/img/logo.png" alt="">
 							</a>
+							<?php //Mejorar color, forma de visualización
+								if ($_SESSION != null)
+								{
+								echo "Bienvenido ", $_SESSION["sesionNombre"];
+								}
+							?>
 						</div>
 						<!-- logo -->
 
@@ -54,6 +60,7 @@
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 										<a class="usuario" href="login.php"><i class="fas fa-user"></i></a>										
+										<a href="View/login.php"><img src="../assets/img/log-out.png" height="15" width="20"/></a>
 									</div>
 								</li>
 							</ul>
