@@ -1,0 +1,29 @@
+Enlace del github: https://github.com/JoseMiOt/ProyectoAmbienteWeb
+
+Proyecto: Farmacia
+Grupo#3
+
+Integrantes:
+-Mario Molina
+-Ricado Villalobos
+-Zeneth Corella
+-Jose Miranda
+
+Avance:
+1. Se crearon nuevas vistas de pantalla (Administrativo, Login).
+2. Se modificó y adaptó la informació de la plantilla a una farmacia.
+3. Se agregaron imagenes y se diseño un logo y nombre (Farmaweb).
+4. Se creó la base de datos con las referencias entre tablas.
+5. Se genero la conexion a la base de datos desde el model.
+6. Creaciónn del modelo MVC (Model, View, Controller).
+7. Se ponen las referencias include_once __DIR__ . en cada pantalla.
+8. A traves de procedimientos almacenados se logro:
+	-Hacer el login
+	-Hacer el register
+	-Agregar productos a las tablas.
+9. Ejecución del JavaScript en la pantalla de login, validando que los datos ingresados sean correctos. 
+10. Se creo el Session_Start y Session_Destroy (Falta depurar un poco mejor el cerrar sesion)
+11. Se muestra el usuario que inicia sesion en las pantallas.
+12. Se inicio en la pagina de administrativo el crud que pueda realizar la persona con el rol correspondiente.
+13. Se inicia la unificacion de menus de todas las pantallas en un solo archivo.php
+14. Inicio del proyecto 26 de setiembre y se han realizado un total de 19 commits.
