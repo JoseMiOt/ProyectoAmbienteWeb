@@ -4,8 +4,6 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
     <title>Login</title>
     <?php
