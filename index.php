@@ -64,7 +64,7 @@ if (session_status() == PHP_SESSION_NONE)
 										<a class="usuario" href="View/login.php"><i class="fas fa-user"></i></a>										
 										<div>
 											<form action="" method="post">
-											<input type="submit" class="submit" value="Cerrar Sesión" id="btn_Cerrar" name="btn_Cerrar">
+											<input type="submit" class="submit" value="Cerrar Sesión" id="btn_Cerrar" name="btn_Cerrar" >
 												<!--<img src="assets/img/log-out.png" height="15" width="20"/>-->
 											</form>
 										</div>

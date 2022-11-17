@@ -59,7 +59,7 @@ if(isset($_POST["btn_Cerrar"]))
     if (session_status() != PHP_SESSION_NONE)
         session_destroy();
         
-    header("Location: ..\View\login.php");
+    header("Location: View\login.php");
 }
 
 

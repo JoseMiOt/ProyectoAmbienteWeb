@@ -18,7 +18,8 @@ if (session_status() == PHP_SESSION_NONE)
 </head>
 <body>
 						<!--<iframe class="navbar" src="navbar.php"></iframe>-->
-						 <!--PROBAR DESPLAZAR TODOS LOS MENUS A UN SOLO HTML-->
+						 <!--PROBAR DESPLAZAR TODOS LOS MENUS A UN SOLO HTML-->	
+
 	<!--PreLoader-->
     <div class="loader">
         <div class="loader-inner">

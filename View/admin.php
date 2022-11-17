@@ -50,14 +50,14 @@ if (session_status() == PHP_SESSION_NONE)
                                     }
 								?>
 								<li><a href="../index.php">Inicio</a></li>
-								<li class="current-list-item"><a href="acerca.php">Acerca De</a></li>
+								<li><a href="acerca.php">Acerca De</a></li>
 								<li><a href="catalogo.php">Catálogo</a></li>
 								<li><a href="contact.php">Contacto</a></li>
-								<li><a href="admin.php">Administración</a></li>
+								<li class="current-list-item"><a href="admin.php">Administración</a></li>
 
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="carrito.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 										<a class="usuario" href="login.php"><i class="fas fa-user"></i></a>	
                                         <a class="usuario" href="login.php"><i class="fas fa-sign-out-alt"></i></a>									
