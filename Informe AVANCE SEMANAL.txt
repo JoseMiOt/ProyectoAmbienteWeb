@@ -1,0 +1,15 @@
+SEMANA 10 A SEMANA 11
+Tenerlo listo antes del miercoles 23 de Noviembre
+
+Proyecto:
+-Mario Molina:
+	Pantalla de Login.
+	Inicio Sesion boton Cerrar Sesion.
+-Ricado Villalobos:
+	Botton buscar.
+	Templates Nav_bar.
+-Zeneth Corella:
+	Roles.
+	CRUD Administrador.
+-Jose Miranda:
+	Diseño de hamburguesa (Usuario, Cerrar Sesion, Carrito, Buscar Usuario).
