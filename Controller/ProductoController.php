@@ -1,6 +1,7 @@
 <?php
 include_once __DIR__ . '\..\Model\ProductoModel.php';
 
+
 function ConsultaProductos()
 {
     $datos = ConsultaProductosModel();
@@ -16,11 +17,12 @@ function ConsultaProductos()
                     echo '</div>';
                     echo '<h3>' . $fila["nombre_prod"] . '</h3>';
                     echo '<p class="product-price"><span>' . $fila["marca"] . '</span>₡' . $fila["precio"] . ' </p>';
-                    echo '<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>';
+                    echo '<a class="cart-btn" id="'.$fila["id_producto"].'" onclick="AgregarCarrito('.$fila["id_producto"].')"><i class="fas fa-shopping-cart"></i>Añadir al Carrito</a>';
                     echo '</div>';
                     echo '</div>';
         }
     }
+
 }
 
 function ConsultaProductoId($id)
@@ -44,7 +46,7 @@ function ConsultaProductoCat($idCat, $id)
                             echo '</div>';
                             echo '<h3>' . $fila["nombre_prod"] . '</h3>';
                             echo '<p class="product-price"><span>' . $fila["marca"] . '</span> ₡' . $fila["precio"] . ' </p>';
-                            echo '<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>';
+                            echo '<a class="cart-btn" id="'.$fila["id_producto"].'" onclick="AgregarCarrito('.$fila["id_producto"].')"><i class="fas fa-shopping-cart"></i>Añadir al Carrito</a>';
                         echo '</div>';
 				echo '</div>';
         }
@@ -67,11 +69,37 @@ function ConsultaProductoInicio()
                     echo '</div>';
                     echo '<h3>' . $fila["nombre_prod"] . '</h3>';
                     echo '<p class="product-price"><span>' . $fila["marca"] . '</span> ₡' . $fila["precio"] . ' </p>';
-                    echo '<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>';
+                    echo '<a class="cart-btn" id="'.$fila["id_producto"].'" onclick="AgregarCarritoInicio('.$fila["id_producto"].')"><i class="fas fa-shopping-cart"></i>Añadir al Carrito</a>';
                 echo '</div>';
 			echo '</div>';
         }
     }
+}
+
+function ConsultaCarrito($IdUsuario)
+{
+    $datos = ConsultaCarritoModel($IdUsuario);
+
+    if($datos -> num_rows > 0)
+    {
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<tr class="table-body-row" id="trProducto">';
+			echo '<td class="product-remove"><a id="'.$fila["id_producto"].'" onclick="EliminarCarrito('.$fila["id_producto"].')"><i class="far fa-window-close"></i></a></td>';
+			echo '<td class="product-image"><img src="../' . $fila["url"] . '" alt=""></td>';
+			echo '<td class="product-name">' . $fila["nombre_prod"] . '</td>';
+			echo '<td class="product-price">₡' . $fila["precio"] . '</td>';
+			echo '<td class="product-quantity"><input type="number" placeholder="0" min="1" max="10" value="0"></td>';
+			echo '<td class="product-total">' . $fila["cant_comprar"] . '</td>';
+			echo '</tr>';
+        }
+    }
+}
+
+function MuestraTotal($IdUsuario)
+{
+    $datos = MuestraTotalModel($IdUsuario);
+    return mysqli_fetch_array($datos);
 }
 
 ?>

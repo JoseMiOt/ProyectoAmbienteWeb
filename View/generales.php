@@ -123,6 +123,8 @@
     <script src="../assets/js/sticker.js"></script>
     <!-- form validation js -->
     <script src="../assets/js/form-validate.js"></script>
+    
     <!-- main js -->
     <script src="../assets/js/main.js"></script>';
+    
   }

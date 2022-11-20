@@ -166,6 +166,7 @@ if (session_status() == PHP_SESSION_NONE)
 	<?php
 		pagesFooter();
 	?>
+	<script src="../assets/js/button.js"></script>
 
 </body>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3308
--- Tiempo de generación: 14-11-2022 a las 23:20:23
+-- Tiempo de generación: 20-11-2022 a las 22:58:55
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -25,6 +25,14 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualiza_cantidad` (IN `pId_carrito` INT, IN `pCantidad` INT)   BEGIN
+
+UPDATE tb_carrito
+SET cant_comprar = pCantidad
+WHERE id_carrito = pId_carrito;
+
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualiza_producto` (IN `pId_producto` INT, IN `pMarca` VARCHAR(25), IN `pNombre` VARCHAR(55), IN `pDescrip` VARCHAR(255), IN `pCant` INT, IN `pPrecio` DECIMAL(10,2), IN `pUrl` VARCHAR(255), IN `pId_tipo_med` INT, IN `pId_farmacia` INT)   BEGIN
 
 UPDATE tb_producto
@@ -45,10 +53,60 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_usuario` (IN `pNombre` V
     VALUES (pNombre,pApellidos,pUsuario,pCorreo,pContrasenna,pRol);
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agrega_carrito` (IN `pId_producto` INT, IN `pId_usuario` INT)   BEGIN
+
+IF EXISTS (SELECT 1=1 FROM tb_carrito WHERE id_producto = pId_producto) THEN
+BEGIN
+UPDATE tb_carrito
+SET cant_comprar = cant_comprar + 1
+WHERE id_producto = pId_producto AND 
+id_usuario = pId_usuario;
+END;
+
+ELSE
+
+BEGIN 
+INSERT INTO tb_carrito
+VALUES("",1,pId_usuario,pId_producto);
+END;
+END IF;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agrega_carrito_cant` (IN `pId_producto` INT, IN `pId_usuario` INT, IN `pId_cantidad` INT)   BEGIN
+
+IF EXISTS (SELECT 1=1 FROM tb_carrito WHERE id_producto = pId_producto) THEN
+BEGIN
+UPDATE tb_carrito
+SET cant_comprar = cant_comprar + pId_cantidad
+WHERE id_producto = pId_producto AND 
+id_usuario = pId_usuario;
+END;
+
+ELSE
+
+BEGIN 
+INSERT INTO tb_carrito
+VALUES("",pId_cantidad,pId_usuario,pId_producto);
+END;
+END IF;
+
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agrega_producto` (IN `pMarca` VARCHAR(25), IN `pNombre` VARCHAR(55), IN `pDescrip` VARCHAR(255), IN `pCant` INT, IN `pPrecio` DECIMAL(10,2), IN `pUrl` VARCHAR(255), IN `pId_tipo_med` INT, IN `pId_farmacia` INT)   BEGIN
 
 INSERT tb_producto
 VALUES ("",pMarca,pNombre,pDescrip,pCant,pPrecio,pUrl,pId_tipo_med,pId_farmacia);
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_calcular_total` (IN `pId_usuario` INT)   BEGIN
+
+SELECT SUM(B.precio*A.cant_comprar) AS Subtotal, 
+       SUM((B.precio*A.cant_comprar))+1500 AS Total
+FROM tb_carrito A, tb_producto B
+WHERE id_usuario = pId_usuario
+AND A.id_producto = B.id_producto;
 
 END$$
 
@@ -58,6 +116,16 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_usuario` (IN `pCorreo`
     FROM tb_usuario
     where correo = pCorreo
     and clave = pClave;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consulta_carrito` (IN `pId_Usuario` INT)   BEGIN
+
+SELECT C.id_carrito,C.cant_comprar,C.id_usuario, P.*
+FROM tb_carrito C
+INNER JOIN tb_producto P ON
+C.id_producto = P.id_producto
+WHERE id_usuario = pId_Usuario;
 
 END$$
 
@@ -96,6 +164,12 @@ FROM tb_producto
 ORDER BY RAND()
 LIMIT 3;
 
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_carrito` (IN `pId_usuario` INT, IN `pId_producto` INT)   BEGIN
+DELETE FROM tb_carrito
+WHERE id_usuario = pId_usuario AND
+id_producto = pId_producto;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_elimina_producto` (IN `pId_producto` INT)   BEGIN
@@ -221,6 +295,19 @@ INSERT INTO `tb_canton` (`id_canton`, `canton`, `id_provincia`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tb_carrito`
+--
+
+CREATE TABLE `tb_carrito` (
+  `id_carrito` int(11) NOT NULL,
+  `cant_comprar` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tb_categoria_producto`
 --
 
@@ -236,7 +323,8 @@ CREATE TABLE `tb_categoria_producto` (
 
 INSERT INTO `tb_categoria_producto` (`id_tipo_med`, `categoria_med`, `descripcion_categoria_med`) VALUES
 (1, 'Belleza y salud', 'Productos de belleza y salud'),
-(2, 'Higiene', 'Productos de higiene personal');
+(2, 'Higiene', 'Productos de higiene personal'),
+(3, 'Analgésicos y Antipiréticos', 'Lograr la analgesia, el alivio y reducción del dolor, ya sea de cabeza, muscular o en general.​​​');
 
 -- --------------------------------------------------------
 
@@ -835,7 +923,10 @@ INSERT INTO `tb_producto` (`id_producto`, `marca`, `nombre_prod`, `descrip_prod`
 (3, 'Malick', 'Alcohol 250ml', 'Alcohol líquido, con un alto poder biocida, diseñado para la asepsia de las manos, fabricado con etanol 70-90%. Para eliminar el 99.9% de bacterias, virus y hongos, previniendo del contagio de influenza.', 2, '607.00', 'assets/img/products/producto-img-1.png', 1, 1),
 (4, 'Colgate', 'Cepillo Slim Soft 2x1', 'Cabeza pequeña y delgada para alcanzar las zonas de difícil acceso. Cuello flexible que ayuda a absorber la tensión durante el cepillado agresivo. Mango de caucho ergonómico para un agarre cómodo.', 47, '2923.00', 'assets/img/products/producto-img-3.png', 2, 1),
 (5, 'Pañalito', 'Crema Pañalito 235g', 'Indicada para prevención y tratamiento de la dermatitis causada por heces, orina o sudoración en el área del pañal, excoriaciones, irritaciones, quemaduras, lesiones de los pliegues y llagas.', 23, '2477.00', 'assets/img/products/producto-img-5.png', 1, 1),
-(6, 'Asepxia', 'Jabón Neutro 100g', 'El jabón es neutro cuando tiene un pH de 7, la mitad de la tabla de pH, pero la mayoría de los jabones que se venden como neutros tienen un pH similar al de nuestra piel, el 5,5.', 19, '2585.00', 'assets/img/products/producto-img-6.jpg', 1, 1);
+(6, 'Asepxia', 'Jabón Neutro 100g', 'El jabón es neutro cuando tiene un pH de 7, la mitad de la tabla de pH, pero la mayoría de los jabones que se venden como neutros tienen un pH similar al de nuestra piel, el 5,5.', 19, '2585.00', 'assets/img/products/producto-img-6.jpg', 1, 1),
+(7, 'MK', 'Acetaminofen 60 ML Infantil MK', 'El acetaminofén es un analgésico y antifebril.', 20, '2400.06', 'assets/img/products/producto-img-8.png', 3, 1),
+(8, 'Bayer', 'Dorival Capsulas 200 MG', 'Dorival® Capsulas es el analgésico que te permite tener los síntomas de la menstruación bajo control.', 28, '3299.70', 'assets/img/products/producto-img-9.png', 3, 1),
+(9, 'Lamisil', 'Lamisil 1% Crema Azul 15 G', 'Crema para pies de atletas de fuerza recetada LamisilAT, crema antifúngica, quemadura, agrietamiento y alivio de la picazón de los atletas', 15, '7484.76', 'assets/img/products/producto-img-7.png', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -904,7 +995,8 @@ INSERT INTO `tb_usuario` (`id_usuario`, `nombre`, `apellidos`, `usuario`, `corre
 (1, 'admin_nombre', 'admin_apellidos', 'SYSDATA_admin', 'admin@gmail.com', '12345', 1),
 (2, 'usuario_nombre', 'usuario_apellido', 'Usuario#1', 'usuario@gmail.com', '12345', 2),
 (5, 'Mario', 'Molina Medal', 'Mario523', 'mmolina00702@ufide.ac.cr', '12345', 1),
-(6, 'Jose', 'Miranda', 'josemiranda11', 'prueba@gmail.com', '12345', 2);
+(6, 'Jose', 'Miranda', 'josemiranda11', 'prueba@gmail.com', '12345', 2),
+(12, 'Jose', 'Miranda', 'miranda30', 'miranda30@gmail.com', '12345', 2);
 
 --
 -- Índices para tablas volcadas
@@ -922,6 +1014,14 @@ ALTER TABLE `tb_bitacora`
 ALTER TABLE `tb_canton`
   ADD PRIMARY KEY (`id_canton`),
   ADD KEY `fk_canton_prov` (`id_provincia`);
+
+--
+-- Indices de la tabla `tb_carrito`
+--
+ALTER TABLE `tb_carrito`
+  ADD PRIMARY KEY (`id_carrito`),
+  ADD KEY `fk_carrito_prod` (`id_producto`),
+  ADD KEY `fk_carrito_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `tb_categoria_producto`
@@ -1016,10 +1116,16 @@ ALTER TABLE `tb_canton`
   MODIFY `id_canton` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
+-- AUTO_INCREMENT de la tabla `tb_carrito`
+--
+ALTER TABLE `tb_carrito`
+  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
+
+--
 -- AUTO_INCREMENT de la tabla `tb_categoria_producto`
 --
 ALTER TABLE `tb_categoria_producto`
-  MODIFY `id_tipo_med` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tipo_med` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_detalle_factura`
@@ -1061,7 +1167,7 @@ ALTER TABLE `tb_precaucion`
 -- AUTO_INCREMENT de la tabla `tb_producto`
 --
 ALTER TABLE `tb_producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_provincia`
@@ -1079,7 +1185,7 @@ ALTER TABLE `tb_rol`
 -- AUTO_INCREMENT de la tabla `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
@@ -1090,6 +1196,13 @@ ALTER TABLE `tb_usuario`
 --
 ALTER TABLE `tb_canton`
   ADD CONSTRAINT `fk_canton_prov` FOREIGN KEY (`id_provincia`) REFERENCES `tb_provincia` (`id_provincia`);
+
+--
+-- Filtros para la tabla `tb_carrito`
+--
+ALTER TABLE `tb_carrito`
+  ADD CONSTRAINT `fk_carrito_prod` FOREIGN KEY (`id_producto`) REFERENCES `tb_producto` (`id_producto`),
+  ADD CONSTRAINT `fk_carrito_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tb_usuario` (`id_usuario`);
 
 --
 -- Filtros para la tabla `tb_detalle_factura`

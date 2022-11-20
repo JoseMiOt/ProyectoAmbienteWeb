@@ -456,6 +456,8 @@ if (session_status() == PHP_SESSION_NONE)
 	<?php
 	footerIndex();
 	?>
+	<script src="assets/js/button.js"></script>
+	<script src="assets/js/inicio.js"></script>
 
 </body>
 </html>

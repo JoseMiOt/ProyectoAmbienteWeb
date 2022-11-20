@@ -129,10 +129,9 @@ if (session_status() == PHP_SESSION_NONE)
 						<p class="single-product-pricing"><span><?php echo $datos["marca"] ?></span> ₡<?php echo $datos["precio"] ?></p>
 						<p><?php echo $datos["descrip_prod"] ?></p>
 						<div class="single-product-form">
-							<form action="index.html">
-								<input type="number" placeholder="0">
-							</form>
-							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
+							<input type="number" id="inputCant" min="1" max="10" value="1">
+							</br>
+							<a class="cart-btn" <?php echo 'id="'.$datos["id_producto"].'"  onclick="AgregarCarritoCant('.$datos["id_producto"].')"'?> ><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
 							<p><strong>Categorias: </strong><?php echo $datos["categoria"] ?></p>
 						</div>
 						<h4>Compartir:</h4>
@@ -198,6 +197,8 @@ if (session_status() == PHP_SESSION_NONE)
 	<?php
 	pagesFooter();
 	?>
+	<script src="../assets/js/button.js"></script>
+	<script src="../assets/js/agregarCant.js"></script>
 
 </body>
 </html>

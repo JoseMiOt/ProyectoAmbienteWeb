@@ -5,6 +5,9 @@ if (session_status() == PHP_SESSION_NONE)
 }
 	include_once __DIR__ . '\generales.php';
 	include_once __DIR__ . '\..\Controller\UsuarioController.php';
+	include_once __DIR__ . '\..\Controller\ProductoController.php';
+
+	$datos = MuestraTotal($_SESSION["sesionId"]);
 ?>
 
 <!DOCTYPE html>
@@ -129,30 +132,9 @@ if (session_status() == PHP_SESSION_NONE)
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="../assets/img/products/producto-img-4.jpg" alt=""></td>
-									<td class="product-name">Chapstick Yerbabuena Blister</td>
-									<td class="product-price">₡2126</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="../assets/img/products/producto-img-5.png" alt=""></td>
-									<td class="product-name">Crema Pañalito 235g</td>
-									<td class="product-price">₡2477</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="../assets/img/products/producto-img-6.jpg" alt=""></td>
-									<td class="product-name">Jabón Neutro 100g</td>
-									<td class="product-price">₡2585</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
+								<?php
+									ConsultaCarrito($_SESSION["sesionId"]);
+								?>
 							</tbody>
 						</table>
 					</div>
@@ -170,28 +152,28 @@ if (session_status() == PHP_SESSION_NONE)
 							<tbody>
 								<tr class="total-data">
 									<td><strong>Subtotal: </strong></td>
-									<td>25000₡</td>
+									<td>₡<?php echo $datos["Subtotal"] ?></td>
 								</tr>
 								<tr class="total-data">
 									<td><strong>Envío: </strong></td>
-									<td>1500₡</td>
+									<td>₡1500</td>
 								</tr>
 								<tr class="total-data">
 									<td><strong>Total: </strong></td>
-									<td>26500₡</td>
+									<td>₡<?php echo $datos["Total"]?></td>
 								</tr>
 							</tbody>
 						</table>
 						<div class="cart-buttons">
-							<a href="cart.html" class="boxed-btn">Actualizar Carrito</a>
-							<a href="checkout.html" class="boxed-btn black">Verificar</a>
+							<a href="" class="boxed-btn">Actualizar Carrito</a>
+							<a href="" class="boxed-btn black">Verificar</a>
 						</div>
 					</div>
 
 					<div class="coupon-section">
 						<h3>Aplicar Cupón</h3>
 						<div class="coupon-form-wrap">
-							<form action="index.html">
+							<form action="">
 								<p><input type="text" placeholder="Código"></p>
 								<p><input type="submit" value="Aplicar"></p>
 							</form>
@@ -231,6 +213,7 @@ if (session_status() == PHP_SESSION_NONE)
 	<?php
 	pagesFooter();
 	?>
+	<script src="../assets/js/elimbutton.js"></script>
 
 </body>
 </html>

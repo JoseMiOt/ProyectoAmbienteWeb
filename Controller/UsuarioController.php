@@ -17,7 +17,8 @@ if(isset($_POST["bt_inicio_sesion"])) {
         $datosUsuario = mysqli_fetch_array($datos);
 
         $_SESSION["sesionNombre"] = $datosUsuario["nombre"];
-        $_SESSION["sesionTipoRol"] = $datosUsuario["id_rol"]; /*Limitar mas adelante los permisos de cada
+        $_SESSION["sesionTipoRol"] = $datosUsuario["id_rol"];
+        $_SESSION["sesionId"] = $datosUsuario["id_usuario"]; /*Limitar mas adelante los permisos de cada
                                                               rol en conjunto con la carpeta de generales*/
         header("Location: ..\index.php");
     }else {

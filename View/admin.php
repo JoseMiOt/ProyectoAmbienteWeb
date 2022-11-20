@@ -41,7 +41,7 @@ if (session_status() == PHP_SESSION_NONE)
 						<!-- logo -->
 
 						<!-- menu start -->
-						<nav class="main-menu">
+						<nav class="main-menu navbar-expand topbar">
 							<ul>
                                 <?php //Mejorar color, forma de visualización
                                     if ($_SESSION != null)
@@ -54,15 +54,48 @@ if (session_status() == PHP_SESSION_NONE)
 								<li><a href="catalogo.php">Catálogo</a></li>
 								<li><a href="contact.php">Contacto</a></li>
 								<li class="current-list-item"><a href="admin.php">Administración</a></li>
-
-								<li>
+                                
+                                <li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="carrito.php"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<a class="usuario" href="login.php"><i class="fas fa-user"></i></a>	
-                                        <a class="usuario" href="login.php"><i class="fas fa-sign-out-alt"></i></a>									
+										<a class="usuario" href="login.php"><i class="fas fa-user"></i></a>		
+										<a class="usuario" href="login.php"><i class="fas fa-sign-out-alt"></i></a>								
 									</div>
 								</li>
+								
+                                <!--  
+                                <li class="nav-item dropdown no-arrow">
+                                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Nombre Prueba  
+                                        <img class="img-profile rounded-circle"
+                                            src="../assets/img/perfil.svg">
+                                    </a>
+                                     
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                        aria-labelledby="userDropdown">
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Perfil
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fas fa-search fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Buscar
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fas fa-shopping-cart fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Carrito
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Cerrar Sesión
+                                        </a>
+                                    </div>
+                                </li>-->
+
+          
 							</ul>
 						</nav>
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>

@@ -1252,6 +1252,11 @@ a.cart-btn:hover {
   color: #F28123;
 }
 
+a.cart-btn:focus {
+  background-color: #051922;
+  color: #F28123;
+}
+
 .recent-posts ul li {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
