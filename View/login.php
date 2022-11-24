@@ -11,8 +11,8 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
     ?>
 </head>
 
-<body>
-    <form action="" method="post" onsubmit="return validacionRegistrar()">
+<body> <!-- -->
+    
         <div class="back">
             <a href="../index.php">
                 <button type="button" class="btn btn-dark" data-toggle="button" aria-pressed="false" autocomplete="off">
@@ -22,6 +22,7 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
         </div>
 
         <div class="container">
+        <form action="" method="post" onsubmit="return validacionRegistrar()">
             <div class="login-container">
                 <div class="register">
                     <h2>Registrarse</h2>
@@ -34,8 +35,8 @@ include_once __DIR__ . '\..\Controller\UsuarioController.php';
                     <input type="submit" class="submit" value="REGISTRARSE" id="bt_registrarse" name="bt_registrarse">
                 </div>
             </div>
-                </form>
-                <form action="" method="post" onsubmit="return validacionInicioSesion()">
+        </form>
+        <form action="" method="post" onsubmit="return validacionInicioSesion()">
             <div class="login-container">
                 <div class="login">
                 
