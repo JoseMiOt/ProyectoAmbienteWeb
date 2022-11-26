@@ -46,17 +46,32 @@ if (session_status() == PHP_SESSION_NONE)
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<?php //Mejorar color, forma de visualización
-									if ($_SESSION != null)
-									{
-									echo "Bienvenido ", $_SESSION["sesionNombre"];
+							<?php //Mejorar color, forma de visualización
+								if ($_SESSION != null) {
+									echo "Bienvenido", $_SESSION["sesionNombre"];
+
+									if ($_SESSION["sesionTipoRol"] == 1) {
+										echo '<li class="current-list-item"><a href="#">Inicio</a></li>
+										<li><a href="View/acerca.php">Acerca De</a></li>
+										<li><a href="View/catalogo.php">Catálogo</a></li>
+										<li><a href="View/contact.php">Contacto</a></li>
+										<li><a href="View/admin.php">Administración</a></li>';
+									} else if ($_SESSION["sesionTipoRol"] == 2) {
+										echo
+										'<li class="current-list-item"><a href="#">Inicio</a></li>"
+										<li><a href="View/acerca.php">Acerca De</a></li>
+										<li><a href="View/catalogo.php">Catálogo</a></li>
+										<li><a href="View/contact.php">Contacto</a></li>';
 									}
+								}
+								else{
+									echo
+										'<li class="current-list-item"><a href="#">Inicio</a></li>"
+										<li><a href="View/acerca.php">Acerca De</a></li>
+										<li><a href="View/catalogo.php">Catálogo</a></li>
+										<li><a href="View/contact.php">Contacto</a></li>';
+								}
 								?>
-								<li class="current-list-item"><a href="#">Inicio</a></li>
-								<li><a href="View/acerca.php">Acerca De</a></li>
-								<li><a href="View/catalogo.php">Catálogo</a></li>
-								<li><a href="View/contact.php">Contacto</a></li>
-								<li><a href="View/admin.php">Administración</a></li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="View/carrito.php"><i class="fas fa-shopping-cart"></i></a>
