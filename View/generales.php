@@ -97,7 +97,8 @@
     <!-- NECESARIO-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
     <!-- responsive -->
-    <link rel="stylesheet" href="../assets/css/responsive.css">';
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link href="../View/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">';
   }
 
   function pagesFooter()
@@ -125,6 +126,9 @@
     <script src="../assets/js/form-validate.js"></script>
     
     <!-- main js -->
-    <script src="../assets/js/main.js"></script>';
-    
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/js/dataTables.bootstrap4.min.js"></script>';
   }
+
+

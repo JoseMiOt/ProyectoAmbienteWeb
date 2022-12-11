@@ -102,5 +102,28 @@ function MuestraTotal($IdUsuario)
     return mysqli_fetch_array($datos);
 }
 
+function ListarProductos()
+{
+    $datos = ListarProductosModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<tr>';
+            echo '<td>' . $fila["id_producto"] . '</td>';
+            echo '<td>' . $fila["marca"] . '</td>';
+            echo '<td>' . $fila["nombre_prod"] . '</td>';
+            echo '<td>' . $fila["descrip_prod"] . '</td>';
+            echo '<td>' . $fila["cant_almacen"] . '</td>';
+            echo '<td>' . $fila["precio"] . '</td>';  
+            echo '<td>' . $fila["url"] . '</td>';  
+            echo '<td>' . $fila["id_tipo_med"] . '</td>';  
+            echo '<td>' . $fila["id_farmacia"] . '</td>';  
+            echo '</tr>';
+        }
+    }
+}
+
 ?>
 

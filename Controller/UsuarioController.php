@@ -67,5 +67,4 @@ if(isset($_POST["btn_Cerrar"]))
 }
 
 
-
 ?>
