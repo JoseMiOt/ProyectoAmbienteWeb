@@ -111,13 +111,4 @@ function MuestraTotalModel($IdUsuario)
     return $datos;
 }
 
-function ListarProductosModel(){
-    $enlace = OpenBD();
-    $procedimiento = "call sp_consulta_productos();";
-    $datos = $enlace -> query($procedimiento);
-    CloseBD($enlace);
-    return $datos;
-
-}
-
 ?>

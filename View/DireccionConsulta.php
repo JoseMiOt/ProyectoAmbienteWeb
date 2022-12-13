@@ -104,7 +104,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="breadcrumb-text">
-            <p>Visualiza, actuliza, agrega o elimina las direcciones</p>
+            <p>Visualiza, actualiza, agrega o elimina las direcciones</p>
             <h1>Dirección</h1>
           </div>
         </div>
@@ -118,7 +118,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
   <div class="container">
 
       <div class="btn-group pull-left">
-        <a href="DireccionAgregar.php"><button type="button" class="btn btn-primary">Agregar Direccion</button></a>
+        <a href="DireccionAgregar.php"><button type="button" class="btn btn-primary">Agregar Dirección</button></a>
       </div>
       <br/> <br />
 
@@ -131,7 +131,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 
                         <thead>
                             <th>ID</th>
-                            <th>Direccion</th>
+                            <th>Dirección</th>
                             <th>Distrito</th>
 
                             <th>Actualizar</th>
@@ -151,6 +151,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
     </div>
     </div>
 <!-- copyright -->
+<div class="mb-150"></div>
 <div class="copyright">
       <div class="container">
         <div class="row">

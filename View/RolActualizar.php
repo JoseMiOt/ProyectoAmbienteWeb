@@ -110,43 +110,37 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
     </div>
   </div>
   <!-- end breadcrumb section -->
-
-  <br />
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            </div>
-        </div>
-        <?php
+  </br>  
+  <div class="container">
+             
+      <?php
         $id_rol= intval($_GET['id']);
         if ($result = ConsultarRolID($id_rol)) {
-        ?>
-
-
-                <form action = "" method="post">
-
-                    <div class="row">
-                        <div class="col-md-4"><b>ID</b>
-                            <input type="text" name="pIdProducto" value="
-                            <?php echo htmlentities($result['id_rol']); ?>"
-                             class="form-control" required readonly>
-                        </div>
-                        <div class="col-md-4"><b>Descripcion</b>
-                            <input type="text" name="descripcion" value=
-                            "<?php echo htmlentities($result['rol_descripcion']); ?>"
-                             class="form-control" required >
-                        </div>
-                    </div>
-                <?php } ?>
-                
-                <div class="row" style="margin-top:1%">
-                    <div class="col-md-8">
-                        <input type="submit" name="update-rol" value="Actualizar">
-                </form>
+      ?>
+      <form action = "" method="post">
+        <div class="row">
+            <div class="col-md-4"><b>ID</b>
+                <input type="text" name="pIdProducto" value="<?php echo htmlentities($result['id_rol']); ?>"class="form-control" required readonly>
             </div>
-    </div></div></div>
+
+            <div class="col-md-4"><b>Descripcion</b>
+                <input type="text" name="descripcion" value="<?php echo htmlentities($result['rol_descripcion']); ?>"class="form-control" required >
+            </div>
+        </div>
+      <?php } ?>
+      
+        </br>
+      <div style="margin-top:1%; text-align:center">
+        <input type="submit" name="update-rol" value="Actualizar">
+      </div>
+
+      </form>
+            
+    </div>
+  </div></div>
 
 <!-- copyright -->
+<div class="mb-150"></div>
 <div class="copyright">
       <div class="container">
         <div class="row">

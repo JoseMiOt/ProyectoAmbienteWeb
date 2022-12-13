@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3308
--- Tiempo de generación: 20-11-2022 a las 22:58:55
+-- Tiempo de generación: 13-12-2022 a las 05:21:01
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -25,6 +25,115 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_bitacora` (IN `pId_bitacora` INT, IN `pAccion` VARCHAR(200), IN `pDescripcion` VARCHAR(100), IN `pFecha` DATETIME)   BEGIN
+UPDATE tb_bitacora
+SET accion = pAccion,
+descripcion = pDescripcion,
+fecha = pFecha
+WHERE id_bitacora = pId_bitacora;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_canton` (IN `pId_canton` INT, IN `pCanton` VARCHAR(100), IN `pId_provincia` INT)   UPDATE tb_canton
+SET canton = pCanton,
+id_provincia = pId_provincia
+
+WHERE id_canton = pId_Canton$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_categoria` (IN `pId_categoria` INT, IN `pCategoria` VARCHAR(50), IN `pDescripcion` VARCHAR(200))   BEGIN
+
+UPDATE tb_categoria_producto
+SET 
+categoria_med = pCategoria,
+descripcion_categoria_med = pDescripcion
+
+WHERE id_tipo_med = pId_categoria;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_detalle` (IN `pId_detalle` INT, IN `pId_factura` INT, IN `pId_producto` INT, IN `pTotal` INT)   BEGIN
+UPDATE tb_detalle_factura
+SET id_factura = pId_factura,
+id_producto = pId_producto,
+total = pTotal 
+WHERE id_detalle_factura = pId_detalle;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_direccion` (IN `pId_direccion` INT, IN `pDireccion` VARCHAR(200), IN `pId_distrito` INT)   BEGIN
+
+UPDATE tb_direccion
+
+SET 
+direccion = pDireccion,
+id_distrito = pId_distrito
+
+WHERE id_direccion = pId_direccion;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_distrito` (IN `pId_distrito` INT, IN `pDistrito` VARCHAR(100), IN `pId_canton` INT)   BEGIN
+UPDATE tb_distrito
+SET 
+distrito = pDistrito,
+id_canton = pId_canton
+
+WHERE id_distrito = pId_distrito;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_factura` (IN `pId_factura` INT, IN `pFecha` DATETIME, IN `pId_usuario` INT)   BEGIN
+UPDATE tb_factura
+SET fecha = pFecha,
+id_usuario = pId_usuario 
+
+WHERE id_factura = pId_factura;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_farmacia` (IN `pId_farmacia` INT, IN `pNombre_far` VARCHAR(25), IN `pTelefono` INT, IN `pHorario` VARCHAR(25), IN `pId_direccion` INT)   BEGIN
+UPDATE tb_farmacia
+SET nombre_far = pNombre_far,
+telefono = pTelefono,
+horario = pHorario,
+id_direccion = pId_direccion
+
+WHERE id_farmacia = pId_farmacia;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_precaucion` (IN `pId_precaucion` INT, IN `pEfectos` VARCHAR(300), IN `pFecha` DATE, IN `pId_producto` INT)   BEGIN
+UPDATE tb_precaucion
+SET efectos_secundarios = pEfectos,
+fecha_expiracion = pFecha,
+id_producto = pId_producto
+
+WHERE id_precaucion = pId_precaucion;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_provincia` (IN `pId_provincia` INT, IN `pProvincia` VARCHAR(10))   BEGIN
+UPDATE tb_provincia
+SET provincia = pProvincia
+
+WHERE id_provincia = pId_provincia;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_rol` (IN `pId_rol` INT, IN `pDescripcion` VARCHAR(20))   BEGIN
+UPDATE tb_rol
+SET rol_descripcion = pDescripcion
+WHERE id_rol = pId_rol;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizar_usuario` (IN `pId_usuario` INT, IN `pNombre` VARCHAR(25), IN `pApellidos` VARCHAR(30), IN `pUsuario` VARCHAR(20), IN `pCorreo` VARCHAR(50), IN `pContrasenna` VARCHAR(255), IN `pRol` INT)   BEGIN
+
+UPDATE tb_usuario
+
+SET nombre = pNombre,
+apellidos = pApellidos,
+usuario = pUsuario,
+correo = pCorreo,
+clave = pContrasenna,
+id_rol = pRol
+
+WHERE id_usuario = pId_usuario;
+
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualiza_cantidad` (IN `pId_carrito` INT, IN `pCantidad` INT)   BEGIN
 
 UPDATE tb_carrito
@@ -45,6 +154,75 @@ url = pUrl,
 id_tipo_med = pId_tipo_med,
 id_farmacia = pId_farmacia
 WHERE id_producto = pId_producto;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_bitacora` (IN `pAccion` VARCHAR(200), IN `pDescripcion` VARCHAR(100), IN `pFecha` DATE)   BEGIN
+INSERT INTO tb_bitacora( accion, descripcion, fecha)
+
+VALUES
+(pAccion, pDescripcion, pFecha );
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_canton` (IN `pCanton` VARCHAR(100), IN `pId_provincia` INT)   BEGIN
+INSERT INTO tb_canton
+(canton, id_provincia)
+
+VALUES
+(pCanton,pId_provincia);
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_catergoria` (IN `pCategoria` VARCHAR(50), IN `pDescripcion` VARCHAR(200))   BEGIN
+INSERT INTO tb_categoria_producto
+(categoria_med,
+descripcion_categoria_med)
+
+VALUES
+(pCategoria,pDescripcion);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_direccion` (IN `pDireccion` VARCHAR(200), IN `pId_distrito` INT)   BEGIN
+
+INSERT 
+INTO tb_direccion (direccion,id_distrito)
+
+VALUES (pDireccion,pId_distrito);
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_factura` (IN `pFecha` DATETIME, IN `pId_usuario` INT)   BEGIN
+INSERT INTO tb_factura(fecha, id_usuario)
+
+VALUES
+(pFecha,pId_usuario);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_farmacia` (IN `pNombre_far` VARCHAR(25), IN `pTelefono` INT, IN `pHorario` VARCHAR(25), IN `pId_direccion` INT)   BEGIN
+INSERT INTO tb_farmacia(nombre_far,telefono, horario, id_direccion)
+
+VALUES
+(pNombre_far, pTelefono,pHorario, pId_direccion);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_precaucion` (IN `pEfectos` VARCHAR(300), IN `pFecha` DATE, IN `pId_producto` INT)   BEGIN
+INSERT INTO tb_precaucion(efectos_secundarios, fecha_expiracion, id_producto)
+
+VALUES
+(pEfectos, pFecha, pId_producto);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_provincia` (IN `pProvincia` VARCHAR(10))   BEGIN
+INSERT INTO tb_provincia(provincia)
+
+VALUES
+(pProvincia);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_rol` (IN `pDescrip` VARCHAR(20))   BEGIN
+
+INSERT INTO tb_rol
+VALUES ("",pDescrip);
 
 END$$
 
@@ -100,6 +278,10 @@ VALUES ("",pMarca,pNombre,pDescrip,pCant,pPrecio,pUrl,pId_tipo_med,pId_farmacia)
 
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_busqueda_producto` (`pNombre` VARCHAR(60))   BEGIN
+    SELECT * FROM tb_producto WHERE nombre_prod REGEXP CONCAT('^',pNombre);
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_calcular_total` (IN `pId_usuario` INT)   BEGIN
 
 SELECT SUM(B.precio*A.cant_comprar) AS Subtotal, 
@@ -107,6 +289,139 @@ SELECT SUM(B.precio*A.cant_comprar) AS Subtotal,
 FROM tb_carrito A, tb_producto B
 WHERE id_usuario = pId_usuario
 AND A.id_producto = B.id_producto;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cantidad_datos_tablas` (OUT `pBitacora` INT, OUT `pPrecaucion` INT, OUT `pDireccion` INT, OUT `pRoles` INT, OUT `pUsuarios` INT, OUT `pCanton` INT, OUT `pDistrtos` INT, OUT `pProductos` INT, OUT `pCategorias` INT, OUT `pFacturas` INT, OUT `pProvincias` INT, OUT `pDetalles` INT, OUT `pFarmacia` INT)   BEGIN
+
+SELECT COUNT(*) INTO pBitacora FROM tb_bitacora ;
+SELECT COUNT(*) INTO pPrecaucion FROM tb_precaucion ;
+SELECT COUNT(*) INTO pDireccion FROM tb_direccion ;
+SELECT COUNT(*) INTO pRoles FROM tb_rol ;
+SELECT COUNT(*) INTO pUsuarios FROM tb_usuario ;
+SELECT COUNT(*) INTO pCanton FROM tb_canton ;
+SELECT COUNT(*) INTO pDistrtos FROM tb_distrito ;
+SELECT COUNT(*) INTO pProductos FROM tb_producto ;
+SELECT COUNT(*) INTO pCategorias FROM tb_categoria_producto ;
+SELECT COUNT(*) INTO pFacturas FROM tb_factura;
+SELECT COUNT(*) INTO pProvincias FROM tb_provincia ;
+SELECT COUNT(*) INTO pDetalles FROM tb_detalle_factura ;
+SELECT COUNT(*) INTO pFarmacia FROM tb_farmacia ;
+
+SELECT pBitacora, pPrecaucion, pDireccion, pRoles, pUsuarios, pCanton, pDistrtos, pProductos,
+        pCategorias, pFacturas, pProvincias, pDetalles, pFarmacia;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_bitacora` ()   BEGIN
+
+SELECT * FROM  tb_bitacora;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_bitacora_id` (IN `pIdBitacora` INT)   BEGIN
+
+SELECT * FROM tb_bitacora 
+WHERE id_bitacora = pIdBitacora;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_canton` ()   BEGIN
+SELECT * FROM tb_canton;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_categoria` ()   BEGIN
+
+SELECT * FROM  tb_categoria_producto;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_categoria_id` (IN `pId_categoria` INT)   BEGIN
+SELECT * FROM tb_categoria_producto
+WHERE id_tipo_med = pId_categoria;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_detalle` ()   BEGIN
+
+SELECT * FROM  tb_detalle_factura;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_detalle_id` (IN `pId_detalle` INT)   BEGIN 
+SELECT * FROM tb_detalle_factura
+	WHERE id_detalle_factura = pId_detalle;
+    
+ END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_direccion` ()   BEGIN
+SELECT *FROM tb_direccion;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_direccion_id` (IN `pId_direccion` INT)   BEGIN
+
+SELECT * FROM tb_direccion
+WHERE
+id_direccion = pId_direccion;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_distrito` ()   BEGIN
+
+SELECT * FROM  tb_distrito;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_factura` ()   BEGIN
+
+SELECT * FROM  tb_factura;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_factura_id` (IN `pId_factura` INT)   BEGIN
+SELECT * from tb_factura
+WHERE id_factura = pId_factura;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_farmacia` ()   BEGIN
+
+SELECT * FROM  tb_farmacia;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_farmacia_id` (IN `pId_farmacia` INT)   BEGIN
+
+SELECT * FROM tb_farmacia
+WHERE id_farmacia = pId_farmacia;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_precaucion` ()   BEGIN
+
+SELECT * FROM  tb_precaucion;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_precaucion_id` (IN `pId_precaucion` INT)   BEGIN
+SELECT * FROM tb_precaucion
+WHERE id_precaucion = pId_precaucion;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_productos_id` (IN `pId_producto` INT)   BEGIN
+
+SELECT * FROM tb_producto
+WHERE id_producto= pId_producto;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_provincia` ()   BEGIN
+
+SELECT * FROM  tb_provincia
+ORDER BY provincia;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_rol` ()   BEGIN
+SELECT * FROM tb_rol;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_rol_id` (IN `pIdRol` INT)   BEGIN
+
+SELECT * FROM tb_rol
+WHERE id_rol = pIdRol;
+
 
 END$$
 
@@ -166,10 +481,57 @@ LIMIT 3;
 
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_bitacora` (IN `pid_bitacora` INT)   BEGIN
+DELETE FROM tb_bitacora
+WHERE id_bitacora =pid_bitacora;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_canton` (IN `pId_canton` INT)   BEGIN
+DELETE FROM tb_canton
+WHERE id_canton = pId_canton;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_carrito` (IN `pId_usuario` INT, IN `pId_producto` INT)   BEGIN
 DELETE FROM tb_carrito
 WHERE id_usuario = pId_usuario AND
 id_producto = pId_producto;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_categoria` (IN `pId_categoria` INT)   BEGIN
+DELETE FROM tb_categoria_producto
+WHERE id_tipo_med =pId_categoria;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_direccion` (IN `pId_direccion` INT)   BEGIN
+DELETE FROM tb_direccion
+WHERE id_direccion =  pId_direccion;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_factura` (IN `pId_factura` INT)   BEGIN
+DELETE FROM tb_factura
+WHERE id_factura = pId_factura;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_farmacia` (IN `pId_farmacia` INT)   BEGIN
+DELETE FROM tb_farmacia
+WHERE id_farmacia = pId_farmacia;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_precaucion` (IN `pId_precaucion` INT)   BEGIN
+DELETE FROM tb_precaucion
+WHERE id_precaucion =pId_precaucion;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_provincia` (IN `pId_provincia` INT)   BEGIN
+DELETE FROM tb_provincia
+WHERE id_provincia = pId_provincia;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_rol` (IN `pIdRol` INT)   BEGIN
+
+DELETE FROM tb_rol
+WHERE id_rol = pIdRol;
+
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_elimina_producto` (IN `pId_producto` INT)   BEGIN
@@ -1119,7 +1481,7 @@ ALTER TABLE `tb_canton`
 -- AUTO_INCREMENT de la tabla `tb_carrito`
 --
 ALTER TABLE `tb_carrito`
-  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
+  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_categoria_producto`

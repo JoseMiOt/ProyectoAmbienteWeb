@@ -105,7 +105,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="breadcrumb-text">
-            <p>Visualiza, actuliza, agrega o elimina la información de las facturas</p>
+            <p>Visualiza, actualiza, agrega o elimina la información de las facturas</p>
             <h1>Factura</h1>
           </div>
         </div>
@@ -153,6 +153,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
     </div> </div> </div>
 
 <!-- copyright -->
+<div class="mb-150"></div>
 <div class="copyright">
       <div class="container">
         <div class="row">

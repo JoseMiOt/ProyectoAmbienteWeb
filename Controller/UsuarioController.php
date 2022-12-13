@@ -17,13 +17,10 @@ if(isset($_POST["bt_inicio_sesion"])) {
         $datosUsuario = mysqli_fetch_array($datos);
 
         $_SESSION["sesionNombre"] = $datosUsuario["nombre"];
-        $_SESSION["sesionId"] = $datosUsuario["id_usuario"]; /*Limitar mas adelante los permisos de cada*/
-        $_SESSION["sesionTipoRol"] = $datosUsuario["id_rol"]; //Limitar mas adelante los permisos de cadarol en conjunto con la carpeta de generales
-            if ($_SESSION["sesionTipoRol"] == 1){
-                header("Location: ..\View\admin.php");
-            }      
-            else if ($_SESSION["sesionTipoRol"] == 2){
-                header("Location: ..\index.php");}
+        $_SESSION["sesionTipoRol"] = $datosUsuario["id_rol"];
+        $_SESSION["sesionId"] = $datosUsuario["id_usuario"]; /*Limitar mas adelante los permisos de cada
+                                                              rol en conjunto con la carpeta de generales*/
+        header("Location: ..\index.php");
     }else {
         header("Location: ..\View\login.php");
         /*Seria bueno ponerle un js que diga que el usuario o contraseña son incorrectas y
@@ -65,6 +62,7 @@ if(isset($_POST["btn_Cerrar"]))
         
     header("Location: View\login.php");
 }
+
 
 
 ?>

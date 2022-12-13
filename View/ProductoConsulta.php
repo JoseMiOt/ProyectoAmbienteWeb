@@ -102,7 +102,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="breadcrumb-text">
-            <p>Visualiza, actuliza, agrega o elimina la información de los productos</p>
+            <p>Visualiza, actualiza, agrega o elimina la información de los productos</p>
             <h1>Productos</h1>
           </div>
         </div>
@@ -130,7 +130,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                             <th>ID</th>
                             <th>Marca</th>
                             <th>Nombre</th>
-                            <th>  Descripcion</th>
+                            <th>Descripción</th>
                             <th>Cantidad</th>
                             <th>Precio</th>
                             <th>URL</th>
@@ -152,6 +152,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
     </div></div></div></div></br>
 
  <!-- copyright -->
+ <div class="mb-150"></div>
  <div class="copyright">
       <div class="container">
         <div class="row">

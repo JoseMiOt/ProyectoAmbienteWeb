@@ -126,53 +126,42 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
   </div>
   <!-- end breadcrumb section -->
 
-  <br />
+  <br/>
 
-    <div class="container">
+  <div class="container"> 
+    <?php
+      $id_factura= intval($_GET['id']);
+      if ($result = ConsultarFacturaID($id_factura)) {
+    ?>
+
+    <form action="" method="post">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4"><b>ID</b>
+                <input type="text" name="id" value="<?php echo htmlentities($result['id_factura']); ?>"class="form-control" required readonly>
+            </div>
+
+            <div class="col-md-4"><b>Fecha</b>
+                <input type="text" name="Fecha" value="<?php echo htmlentities($result['fecha']);?>"class="form-control" required autocomplete="Off">
+            </div>
+        
+            <div class="col-md-4"><b>Usuario</b>
+                <input type="text" name="Usuario" value="<?php echo htmlentities($result['id_usuario']); ?>"class="form-control" required >
             </div>
         </div>
-
-        <?php
-        $id_factura= intval($_GET['id']);
-        if ($result = ConsultarFacturaID($id_factura)) {
-        ?>
-
-                <form action = "" method="post">
-
-                    <div class="row">
-                        <div class="col-md-4"><b>ID</b>
-                            <input type="text" name="id" value="
-                            <?php echo htmlentities($result['id_factura']); ?>"
-                             class="form-control" required readonly>
-                        </div>
-
-                        <div class="col-md-4"><b>Fecha</b>
-                            <input type="text" name="Fecha" value=
-                            "<?php echo htmlentities($result['fecha']); ?>"
-                             class="form-control" required >
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4"><b>Usuario</b>
-                            <input type="text" name="Usuario" value="
-                            <?php echo htmlentities($result['id_usuario']); ?>"
-                             class="form-control" required >
-                             </div></div>
-               
-                <?php } ?>
-                
-                <div class="row" style="margin-top:1%">
-                    <div class="col-md-8">
-                        <input type="submit" name="update-factura" value="Actualizar">
-                    </div>
-                </div>
-                </form>
-            </div>
+    
+    <?php } ?>
+    
+    </br>
+    <div style="margin-top:1%; text-align:center">
+      <input type="submit" name="update-factura" value="Actualizar">
     </div>
+
+    </form>
+    </div></div>
+    </div>
+  </div>
  <!-- copyright -->
+ <div class="mb-150"></div>
  <div class="copyright">
       <div class="container">
         <div class="row">

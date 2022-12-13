@@ -102,7 +102,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="breadcrumb-text">
-            <p>Actuliza la información del producto</p>
+            <p>Actualiza la información del producto</p>
             <h1>Productos</h1>
           </div>
         </div>
@@ -114,88 +114,66 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
   <br />
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            </div>
-        </div>
+
         <?php
-        $id_producto= intval($_GET['id']);
-        if ($result = ConsultarProductoID($id_producto)) {
+          $id_producto= intval($_GET['id']);
+          if ($result = ConsultarProductoID($id_producto)) {
         ?>
 
+        <form action="" method="post">
+        <div class="row">
+          <div class="col-md-4"><b>ID</b>
+                <input type="text" name="id" value="<?php echo htmlentities($result['id_producto']); ?>"class="form-control" required readonly>
+          </div>
 
-                <form action = "" method="post">
+          <div class="col-md-4"><b>Marca</b>
+            <input type="text" name="Marca" value="<?php echo htmlentities($result['marca']); ?>"class="form-control" required autocomplete="Off">
+          </div>
+                    
+          <div class="col-md-4"><b>Nombre</b>
+            <input type="text" name="Nombre" value="<?php echo htmlentities($result['nombre_prod']); ?>"class="form-control" required autocomplete="Off">
+          </div>
+        </div>
 
-                    <div class="row">
-                        <div class="col-md-4"><b>ID</b>
-                            <input type="text" name="id" value="
-                            <?php echo htmlentities($result['id_producto']); ?>"
-                             class="form-control" required readonly>
-                        </div>
-                        <div class="col-md-4"><b>Marca</b>
-                            <input type="text" name="Marca" value=
-                            "<?php echo htmlentities($result['marca']); ?>"
-                             class="form-control" required >
-                        </div>
-                    </div>
+        <div class="row">
+          <div class="col-md-4"><b>Descripcion</b>
+              <input type="text" name="Descripcion" value="<?php echo htmlentities($result['descrip_prod']); ?>"class="form-control" required autocomplete="Off">
+          </div>
+                     
+          <div class="col-md-4"><b>Cantidad</b>
+              <input type="text" name="Cantidad" value="<?php echo htmlentities($result['cant_almacen']); ?>"class="form-control" required autocomplete="Off">
+          </div>
 
-                    <div class="row">
-                        <div class="col-md-4"><b>Nombre</b>
-                            <input type="text" name="Nombre" value="
-                            <?php echo htmlentities($result['nombre_prod']); ?>"
-                             class="form-control" required >
-                        </div>
-                        <div class="col-md-4"><b>Descripcion</b>
-                            <input type="text" name="Descripcion" value=
-                            "<?php echo htmlentities($result['descrip_prod']); ?>"
-                             class="form-control" required >
-                        </div>
-                    </div>
+          <div class="col-md-4"><b>Precio</b>
+              <input type="text" name="Precio" value="<?php echo htmlentities($result['precio']); ?>"class="form-control" required autocomplete="Off">
+          </div>
+        </div>
 
-                    <div class="row">
-                        <div class="col-md-4"><b>Cantidad</b>
-                            <input type="text" name="Cantidad" value="
-                            <?php echo htmlentities($result['cant_almacen']); ?>"
-                             class="form-control" required >
-                        </div>
-                        <div class="col-md-4"><b>Precio</b>
-                            <input type="text" name="Precio" value=
-                            "<?php echo htmlentities($result['precio']); ?>"
-                             class="form-control" required >
-                        </div>
-                    </div>
+        <div class="row">
+          <div class="col-md-4"><b>URL</b>
+              <input type="text" name="URL" value="<?php echo htmlentities($result['url']); ?>"class="form-control" required autocomplete="Off">
+          </div>
 
-                    <div class="row">
-                        <div class="col-md-4"><b>URL</b>
-                            <input type="text" name="URL" value="
-                            <?php echo htmlentities($result['url']); ?>"
-                             class="form-control" required >
-                        </div>
-                        <div class="col-md-4"><b>Tipo</b>
-                            <input type="text" name="Tipo" value=
-                            "<?php echo htmlentities($result['id_tipo_med']); ?>"
-                             class="form-control" required >
-                        </div>
-                    </div>
+          <div class="col-md-4"><b>Tipo</b>
+              <input type="text" name="Tipo" value="<?php echo htmlentities($result['id_tipo_med']); ?>"class="form-control" required autocomplete="Off">
+          </div>
 
-                    <div class="row">
-                        <div class="col-md-4"><b>Farmacia</b>
-                            <input type="text" name="Farmacia" value="
-                            <?php echo htmlentities($result['id_farmacia']); ?>"
-                             class="form-control" required >
-                        </div></div>
+          <div class="col-md-4"><b>Farmacia</b>
+              <input type="text" name="Farmacia" value="<?php echo htmlentities($result['id_farmacia']); ?>"class="form-control" required autocomplete="Off">
+          </div>
+        </div>
                 <?php } ?>
                 
-                <div class="row" style="margin-top:1%">
-                    <div class="col-md-8">
-                        <input type="submit" name="update-producto" value="Actualizar">
-                    </div>
+              </br>
+                <div style="margin-top:1%; text-align:center">
+                  <input type="submit" name="update-producto" value="Actualizar">
                 </div>
                 </form>
-            </div>
+      </div>
     </div>
 
  <!-- copyright -->
+ <div class="mb-150"></div>
  <div class="copyright">
       <div class="container">
         <div class="row">

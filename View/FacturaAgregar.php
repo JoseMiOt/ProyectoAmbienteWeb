@@ -117,35 +117,34 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      
-<!-------------------------------------- Agregar Datos ---------------------------->
 
-<form action ="" method="post">
-<div class="container">
+    <form action="" method="post">
+    <div class="container">
 
-<div class="row">
-        <div class="col-md-4"><b>Fecha</b>
-            <input type="text" name="Fecha" class="form-control" required>
-        </div>
+    <div class="row">
+            <div class="col-md-4"><b>Fecha</b>
+                <input type="text" name="Fecha" class="form-control" required autocomplete="Off">
+            </div>
 
-        <div class="col-md-4"><b>Usuario</b>
-            <input type="text" name="Usuario" class="form-control" required>
-        </div>
+            <div class="col-md-4"><b>Usuario</b>
+                <input type="text" name="Usuario" class="form-control" required autocomplete="Off">
+            </div>
     </div>
-    </div></div></div>
 
-    <br/> 
-    <div class="row" style="margin-top:1%">
-        <div class="col-md-8">
-            <input type="submit" name='insert-factura'value="Guardar" class ="submit">
+    </br>
+        <div style="margin-top:1%; text-align:center">
+                <input type="submit" name='insert-factura'value="Guardar" class ="submit">
         </div>
 
-</form>
+    </form>
+      </div>
+    </div>
+  </div>
 </div>
-</div></br>
 
 <!-------------------------------------- Fin  --------------------------------->
 <!-- copyright -->
+<div class="mb-150"></div>
     <div class="copyright">
       <div class="container">
         <div class="row">

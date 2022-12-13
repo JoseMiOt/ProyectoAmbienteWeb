@@ -104,7 +104,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="breadcrumb-text">
-            <p>Visualiza, actuliza, agrega o elimina la información de los detalles de factura</p>
+            <p>Visualiza, actualiza, agrega o elimina la información de los detalles de factura</p>
             <h1>Detalle de factura</h1>
           </div>
         </div>

@@ -117,38 +117,35 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
   
 
 <!-------------------------------------- Agregar Datos ---------------------------->
-<form action ="" method="post">
-<div class="container"> 
-<div class="row">
-        <div class="col-md-4"><b>Acción</b>
-            <input type="text" name="Accion" class="form-control" required>
-        </div>
-
-        <div class="col-md-4"><b>Descripción</b>
-            <input type="text" name="Descripcion" class="form-control" required>
-        </div>
-    </div>
-
+<form action="" method="post">
+  <div class="container"> 
     <div class="row">
-        <div class="col-md-4"><b>Fecha</b>
-            <input type="text" name="fecha" class="form-control" required>
-        </div>
-        </div>
-        <div class="row" style="margin-top:1%">
-                    <div class="col-md-8">
-                        <input type="submit" name="insert-bitacora" value="Guardar" class ="submit">
-                    </div>
+      <div class="col-md-4"><b>Acción</b>
+          <input type="text" name="Accion" class="form-control" required autocomplete="Off">
+      </div>
 
-   
+      <div class="col-md-4"><b>Descripción</b>
+          <input type="text" name="Descripcion" class="form-control" required autocomplete="Off">
+      </div>
+      
+
+      <div class="col-md-4"><b>Fecha</b>
+          <input type="text" name="fecha" class="form-control" required autocomplete="Off">
+      </div>
+      
     </div>
+      </br>
+      <div style="margin-top:1%; text-align:center">
+        <input type="submit" name="insert-bitacora" value="Guardar" class ="submit">
+      </div>
+  </div>
 </form>
 
-
-</div>
 
 
 <!-------------------------------------- Fin  --------------------------------->
 <!-- copyright -->
+<div class="mt-150 mb-150">
 <div class="copyright">
       <div class="container">
         <div class="row">

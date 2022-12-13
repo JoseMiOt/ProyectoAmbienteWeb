@@ -106,7 +106,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>Visualiza, actuliza, agrega o elimina la información de la bitácora</p>
+                        <p>Visualiza, actualiza, agrega o elimina la información de la bitácora</p>
                         <h1>Bitácora</h1>
                     </div>
                 </div>
@@ -132,8 +132,8 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 
                         <thead>
                             <th>ID</th>
-                            <th>Accion</th>
-                            <th>Descripcion</th>
+                            <th>Acción</th>
+                            <th>Descripción</th>
                             <th>Fecha</th>
 
                             <th>Actualizar</th>
@@ -154,6 +154,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
     </div>
 
     <!-- copyright -->
+    <div class="mt-150 mb-150">
     <div class="copyright">
         <div class="container">
             <div class="row">

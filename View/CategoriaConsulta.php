@@ -104,7 +104,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="breadcrumb-text">
-            <p>Visualiza, actuliza, agrega o elimina las categoías</p>
+            <p>Visualiza, actualiza, agrega o elimina las categorías</p>
             <h1>Categoría</h1>
           </div>
         </div>
@@ -113,13 +113,12 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
   </div>
   <!-- end breadcrumb section -->
 
-  <br />
-
+  <br/>
  
   <div class="container">
-        <a href="CategoriaAgregar.php"><button type="button" class="btn btn-primary">Agregar Categoría</button></a>
-      </div>
-      <br/> <br />
+      <a href="CategoriaAgregar.php"><button type="button" class="btn btn-primary">Agregar Categoría</button></a>
+  </div>
+      <br/> <br/>
 
 <body>
     <div class="container">
@@ -150,6 +149,8 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
             </div>
         </div>
     </div>
+
+    <div class="mb-150"></div>
 
 <!-- copyright -->
 <div class="copyright">

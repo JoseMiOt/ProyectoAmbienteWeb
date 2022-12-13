@@ -44,32 +44,32 @@ if (session_status() == PHP_SESSION_NONE)
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-							<?php //Mejorar color, forma de visualización
-								if ($_SESSION != null) {
-									echo "Bienvenido ", $_SESSION["sesionNombre"];
-
-									if ($_SESSION["sesionTipoRol"] == 1) {
+								<?php //Mejorar color, forma de visualización
+									if ($_SESSION != null) {
+										echo "Bienvenido ", $_SESSION["sesionNombre"];
+	
+										if ($_SESSION["sesionTipoRol"] == 1) {
+											echo '<li><a href="../index.php">Inicio</a></li>
+											<li><a href="acerca.php">Acerca De</a></li>
+											<li class="current-list-item"><a href="">Catálogo</a></li>
+											<li><a href="contact.php">Contacto</a></li>
+											<li><a href="admin.php">Administración</a></li>';
+										} else if ($_SESSION["sesionTipoRol"] == 2) {
+											echo
+											'<li><a href="../index.php">Inicio</a></li>
+											<li><a href="acerca.php">Acerca De</a></li>
+											<li class="current-list-item"><a href="">Catálogo</a></li>
+											<li><a href="contact.php">Contacto</a></li>';
+										}
+									}
+									else{
 										echo '<li><a href="../index.php">Inicio</a></li>
-										<li><a href="acerca.php">Acerca De</a></li>
-										<li class="current-list-item"><a href="">Catálogo</a></li>
-										<li><a href="contact.php">Contacto</a></li>
-										<li><a href="admin.php">Administración</a></li>';
-									} else if ($_SESSION["sesionTipoRol"] == 2) {
-										echo
-										'<li><a href="../index.php">Inicio</a></li>
 										<li><a href="acerca.php">Acerca De</a></li>
 										<li class="current-list-item"><a href="">Catálogo</a></li>
 										<li><a href="contact.php">Contacto</a></li>';
 									}
-								}
-								else{
-									echo '<li><a href="../index.php">Inicio</a></li>
-									<li><a href="acerca.php">Acerca De</a></li>
-									<li class="current-list-item"><a href="">Catálogo</a></li>
-									<li><a href="contact.php">Contacto</a></li>';
-								}
-								?>
-
+									?>
+									
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="carrito.php"><i class="fas fa-shopping-cart"></i></a>

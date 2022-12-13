@@ -153,10 +153,10 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                                         </div>
                                     </div>
                                 </div>
-                        </a>
+                            </a>
 
                             <!-- Earnings (Monthly) Card Example -->
-                            <div class="col-xl-3 col-md-6 mb-4">
+                            <!--<div class="col-xl-3 col-md-6 mb-4">
                                 <div class="card border-left-success shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -174,15 +174,15 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <!-- Earnings (Monthly) Card Example -->
                             <a class="col-xl-3 col-md-6 mb-4" href="CategoriaConsulta.php">
-                                <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card border-left-success shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                     Categorías del Producto
                                                 </div>
                                                 <div class="row no-gutters align-items-center">
@@ -223,11 +223,11 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 
 
                             <a class="col-xl-3 col-md-6 mb-4" href="DireccionConsulta.php">
-                                <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                                     Direcciones</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                     Cantidad:
@@ -242,7 +242,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                                 </div>
                         </a>
 
-                            <div class="col-xl-3 col-md-6 mb-4">
+                            <!--<div class="col-xl-3 col-md-6 mb-4">
                                 <div class="card border-left-success shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -260,13 +260,14 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
+                            
                             <a class="col-xl-3 col-md-6 mb-4" href="FacturaConsulta.php">
-                                <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card border-left-primary shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                     Facturas
                                                 </div>
                                                 <div class="row no-gutters align-items-center">
@@ -287,11 +288,11 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                         </a>
                             <!-- Pending Requests Card Example -->
                             <a class="col-xl-3 col-md-6 mb-4" href="FarmaciaConsulta.php">
-                                <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card border-left-success shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                     Farmacias</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                     Cantidad:
@@ -307,11 +308,11 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                             </a>
 
                             <a class="col-xl-3 col-md-6 mb-4" href="PrecaucionConsulta.php">
-                                <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card border-left-warning shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                     Precauciones</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                     Cantidad:
@@ -324,29 +325,30 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                                         </div>
                                     </div>
                                 </div>
-                        </a>
+                            </a>
+
                             <a class="col-xl-3 col-md-6 mb-4" href="ProductoConsulta.php">
-                                <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Productos</div>
-                                                <div class="col-auto">
+                                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                    Productos</div>
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">Cantidad:
                                                         <?php echo htmlentities($result['pProductos']); ?>
                                                     </div>
-
                                                 </div>
+
                                                 <div class="col-auto">
                                                     <i class="fas fa-shopping-basket fa-2x text-gray-300"></i>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                        </a>
+                            </a>
 
-                            <div class="col-xl-3 col-md-6 mb-4">
+                            <!--
+                                <div class="col-xl-3 col-md-6 mb-4">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -368,13 +370,15 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                                     </div>
                                 </div>
                             </div>
+                        -->
+
                             <!-- Pending Requests Card Example -->
                             <a class="col-xl-3 col-md-6 mb-4" href="RolConsulta.php">
-                                <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card border-left-primary shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                     Roles</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                     Cantidad:
@@ -390,11 +394,11 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                             </a>
 
                             <a class="col-xl-3 col-md-6 mb-4" href="UsuarioAdmin.php">
-                                <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card border-left-success shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
-                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                     Usuarios</div>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                     Cantidad:

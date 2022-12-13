@@ -114,59 +114,39 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
   <!-- end breadcrumb section -->
 
   <br />
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
         <?php
- 
-        $id_direccion= intval($_GET['id']);
-        if ($result = ConsultarDireccionID($id_direccion)) {
+          $id_direccion= intval($_GET['id']);
+          if ($result = ConsultarDireccionID($id_direccion)) {
         ?>
-
-
-                <form action = "" method="post">
-
-                    <div class="row">
-                        <div class="col-md-4"><b>ID</b>
-                            <input type="text" name="id" value="
-                            <?php echo htmlentities($result['id_direccion']); ?>"
-                             class="form-control" required readonly>
-                        </div>
-
-                        <div class="col-md-4"><b>Direccion</b>
-                            <input type="text" name="Direccion" value=
-                            "<?php echo htmlentities($result['direccion']); ?>"
-                             class="form-control" required >
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4"><b>Distrito</b>
-                            <input type="text" name="Distrito" value="
-                            <?php echo htmlentities($result['id_distrito']); ?>"
-                             class="form-control" required >
-                        </div>
-                        </div>
-
-               
-                <?php } ?>
-                
-                <div class="row" style="margin-top:1%">
-                    <div class="col-md-8">
-                        <input type="submit" name="update-direccion" value="Actualizar">
-                    </div>
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-md-4"><b>ID</b>
+                    <input type="text" name="id" value="<?php echo htmlentities($result['id_direccion']); ?>" class="form-control" required readonly>
                 </div>
-                </form>
-            </div>
+
+                <div class="col-md-4"><b>Direccion</b>
+                    <input type="text" name="Direccion" value="<?php echo htmlentities($result['direccion']); ?>"class="form-control" required autocomplete="Off">
+                </div>
+            
+                <div class="col-md-4"><b>Distrito</b>
+                    <input type="text" name="Distrito" value="<?php echo htmlentities($result['id_distrito']); ?>"class="form-control" required autocomplete="Off">
+                </div>
+          </div>
+
+        <?php } ?>
+        </br>
+        <div  style="margin-top:1%; text-align:center">
+                <input type="submit" name="update-direccion" value="Actualizar">
+        </div>
+        </form>
+        </div> 
     </div>
-    </div>
+  </div>
 <!-- copyright -->
+<div class="mb-150"></div>
 <div class="copyright">
       <div class="container">
         <div class="row">

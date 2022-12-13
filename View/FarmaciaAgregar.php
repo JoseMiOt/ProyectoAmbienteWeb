@@ -117,40 +117,41 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 
 <!-------------------------------------- Agregar Datos ---------------------------->
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-<form action ="" method="post">
-<div class="row">
-        <div class="col-md-4"><b>Nombre</b>
-            <input type="text" name="Nombre" class="form-control" required>
-        </div>
-
-        <div class="col-md-4"><b>Telefono</b>
-            <input type="text" name="Telefono" class="form-control" required>
-        </div>
-    </div>
-
+  <form action="" method="post">
     <div class="row">
-        <div class="col-md-4"><b>Horario</b>
-            <input type="text" name="Horario" class="form-control" required>
+
+      <div class="col-md-4"><b>Nombre</b>
+        <input type="text" name="Nombre" class="form-control" required autocomplete="Off">
+      </div>
+
+            <div class="col-md-4"><b>Teléfono</b>
+                <input type="text" name="Telefono" class="form-control" required autocomplete="Off">
+            </div>
+        
+            <div class="col-md-4"><b>Horario</b>
+                <input type="text" name="Horario" class="form-control" required autocomplete="Off">
+            </div>
+
+            </div>
+        
+        <div class="row">
+            <div class="col-md-4"><b>Dirección</b>
+                <input type="text" name="Direccion" class="form-control" required autocomplete="Off">
+            </div>
+        </div>
+        <br/> 
+
+        <div style="margin-top:1%; text-align:center">
+          <input type="submit" name='insert-farmacia'value="Guardar" class ="submit">
         </div>
 
-        <div class="col-md-4"><b>Direccion</b>
-            <input type="text" name="Direccion" class="form-control" required>
-        </div>
-    </div>
-    <br/> 
-    <div class="row" style="margin-top:1%">
-        <div class="col-md-8">
-            <input type="submit" name='insert-farmacia'value="Guardar" class ="submit">
-        </div>
-
-</form>
+  </form>
 </div>
 </div></div></div>
 
 <!-------------------------------------- Fin  --------------------------------->
 <!-- copyright -->
+<div class="mb-150"></div>
 <div class="copyright">
       <div class="container">
         <div class="row">

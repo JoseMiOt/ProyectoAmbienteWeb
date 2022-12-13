@@ -56,7 +56,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                 <li><a href="acerca.php">Acerca De</a></li>
                 <li><a href="catalogo.php">Catálogo</a></li>
                 <li><a href="contact.php">Contacto</a></li>
-                <li><a href="admin.php.php">Administración</a></li>
+                <li><a href="admin.php">Administración</a></li>
                 
 
                 <li>
@@ -104,7 +104,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="breadcrumb-text">
-            <p>Actualiza las categoías</p>
+            <p>Actualiza las categorías</p>
             <h1>Categoría</h1>
           </div>
         </div>
@@ -116,48 +116,38 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
   <br />
 
   <div class="container">
-        <?php
- 
-        $id_tipo_med= intval($_GET['id']);
-        if ($result = ConsultarCategoriaID($id_tipo_med)) {
-        ?>
 
+    <?php
+    $id_tipo_med= intval($_GET['id']);
+    if ($result = ConsultarCategoriaID($id_tipo_med)) {
+    ?>
 
-                <form action = "" method="post">
+    <form action="" method="post">
+      <div class="row">
+          <div class="col-md-4"><b>ID</b>
+              <input type="text" name="id" value="<?php echo htmlentities($result['id_tipo_med']); ?>" class="form-control" required readonly>
+          </div>
 
-                    <div class="row">
-                        <div class="col-md-4"><b>ID</b>
-                            <input type="text" name="id" value="
-                            <?php echo htmlentities($result['id_tipo_med']); ?>"
-                             class="form-control" required readonly>
-                        </div>
+          <div class="col-md-4"><b>Categoría</b>
+              <input type="text" name="Categoria" value="<?php echo htmlentities($result['categoria_med']); ?>" class="form-control" required autocomplete="Off">
+          </div>
+      
 
-                        <div class="col-md-4"><b>Categoria</b>
-                            <input type="text" name="Categoria" value=
-                            "<?php echo htmlentities($result['categoria_med']); ?>"
-                             class="form-control" required >
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4"><b>Descripcion</b>
-                            <input type="text" name="Descripcion" value="
-                            <?php echo htmlentities($result['descripcion_categoria_med']); ?>"
-                             class="form-control" required >
-                        </div>
-               
-                <?php } ?>
-                </div>
-                <div class="row" style="margin-top:1%">
-                    <div class="col-md-8">
-                        <input type="submit" name="update-categoria" value="Actualizar">
-                    </div>
-                </div>
-                </form>
+          <div class="col-md-4"><b>Descripción</b>
+              <input type="text" name="Descripcion" value="<?php echo htmlentities($result['descripcion_categoria_med']); ?>" class="form-control" required autocomplete="Off">
+          </div>
+      </div>
+            <?php } ?>
+            
+            <div style="margin-top:2%; text-align:center">
+                    <input type="submit" name="update-categoria" value="Actualizar">
             </div>
-    </div>
+
+    </form>
+</div>
 
 <!-- copyright -->
+<div class="mb-150"></div>
 <div class="copyright">
       <div class="container">
         <div class="row">

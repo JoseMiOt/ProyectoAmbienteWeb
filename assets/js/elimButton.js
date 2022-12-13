@@ -1,7 +1,6 @@
 function EliminarCarrito(idBtn)
 {
     let trAtribute = document.getElementById("trProducto");
-    
     $.ajax({
         url: '../Model/ProductoModel.php',
         type: 'POST',
@@ -13,6 +12,6 @@ function EliminarCarrito(idBtn)
         }
     })
     
-    trAtribute.style.visibility = "hidden";
-    //location.reload();
+    //trAtribute.style.visibility = "hidden";
+    location.reload();
 }

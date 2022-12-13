@@ -116,49 +116,44 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
   <!-- --------------------------------------------------------------------->
   <div class="container">
     <?php
-
-  $id_bitacora = intval($_GET['id']);
-  if ($result = ConsultarBitacoraID($id_bitacora)) {
-  ?>
-
-
+      $id_bitacora = intval($_GET['id']);
+      if ($result = ConsultarBitacoraID($id_bitacora)) {
+    ?>
     <form action="" method="post">
 
       <div class="row">
         <div class="col-md-4"><b>ID</b>
-          <input type="text" name="id" value="
-                            <?php echo htmlentities($result['id_bitacora']); ?>" class="form-control" required
-            readonly>
+          <input type="text" name="id" value="<?php echo htmlentities($result['id_bitacora']);?>" class="form-control" required readonly>
         </div>
+        
         <div class="col-md-4"><b>Acción</b>
-          <input type="text" name="Accion" value="
-                            <?php echo htmlentities($result['accion']); ?>" class="form-control" required>
+          <input type="text" name="Accion" value="<?php echo htmlentities($result['accion']);?>" class="form-control" required>
+        </div>
+
+        <div class="col-md-4"><b>Descripción</b>
+          <input type="text" name="Descripcion" value="<?php echo htmlentities($result['descripcion']); ?>" class="form-control" required autocomplete="Off">
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-4"><b>Descripción</b>
-          <input type="text" name="Descripcion" value="
-                            <?php echo htmlentities($result['descripcion']); ?>" class="form-control" required>
+        <div class="row">
+          <div class="col-md-4"><b>Fecha</b>
+            <input type="text" name="Fecha" value="<?php echo htmlentities($result['fecha']);?>" class="form-control" required autocomplete="Off">
+          </div>
         </div>
-        <div class="col-md-4"><b>Fecha</b>
-          <input type="text" name="Fecha" value="
-                            <?php echo htmlentities($result['fecha']); ?>" class="form-control" required>
-        </div>
-      </div>
       <?php } ?>
 
-      <div class="row" style="margin-top:1%">
-        <div class="col-md-8">
-          <input type="submit" name="update-bitacora" value="Actualizar">
-        </div>
+      </br>
+      <div style="margin-top:1%; text-align:center">
+        <input type="submit" name="update-bitacora" value="Actualizar">
       </div>
+
     </form>
   </div>
   </div>
   <!------------------------------------------------------------------- -->
 
   <!-- copyright -->
+  <div class="mt-150 mb-150">
   <div class="copyright">
     <div class="container">
       <div class="row">

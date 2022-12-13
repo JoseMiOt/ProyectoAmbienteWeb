@@ -104,7 +104,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="breadcrumb-text">
-            <p>Visualiza, actuliza, agrega o elimina la información de las preaciones de los medicamentos</p>
+            <p>Visualiza, actualiza, agrega o elimina la información de las precauciones de los medicamentos</p>
             <h1>Precauciones</h1>
           </div>
         </div>
@@ -151,6 +151,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
     </div></div></div></div>
 
 <!-- copyright -->
+<div class="mb-150"></div>
 <div class="copyright">
       <div class="container">
         <div class="row">

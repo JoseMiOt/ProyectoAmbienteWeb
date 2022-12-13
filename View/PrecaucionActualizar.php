@@ -115,58 +115,47 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 
   <br />
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            </div>
-        </div>
-        <?php
- 
-        $id_precaucion= intval($_GET['id']);
-        if ($result = ConsultarPrecaucionID($id_precaucion)) {
-        ?>
+    <?php
 
+      $id_precaucion= intval($_GET['id']);
+      if ($result = ConsultarPrecaucionID($id_precaucion)) {
+    ?>
 
-                <form action = "" method="post">
+    <form action = "" method="post">
 
-                    <div class="row">
-                        <div class="col-md-4"><b>ID</b>
-                            <input type="text" name="id" value="
-                            <?php echo htmlentities($result['id_precaucion']); ?>"
-                             class="form-control" required readonly>
-                        </div>
+    <div class="row">
+      <div class="col-md-4"><b>ID</b>
+        <input type="text" name="id" value="<?php echo htmlentities($result['id_precaucion']); ?>"class="form-control" required readonly>
+      </div>
 
-                        <div class="col-md-4"><b>Efectos Secundarios</b>
-                            <input type="text" name="Efectos" value=
-                            "<?php echo htmlentities($result['efectos_secundarios']); ?>"
-                             class="form-control" required >
-                        </div>
-                    </div>
+      <div class="col-md-4"><b>Efectos Secundarios</b>
+        <input type="text" name="Efectos" value="<?php echo htmlentities($result['efectos_secundarios']); ?>"class="form-control" required autocomplete="Off">
+      </div>
+                    
+      <div class="col-md-4"><b>Fecha de Expiración</b>
+          <input type="text" name="Fecha" value="<?php echo htmlentities($result['fecha_expiracion']); ?>"class="form-control" required autocomplete="Off">
+      </div>
+    </div>
 
-                    <div class="row">
-                        <div class="col-md-4"><b>Fecha de Expiración</b>
-                            <input type="text" name="Fecha" value="
-                            <?php echo htmlentities($result['fecha_expiracion']); ?>"
-                             class="form-control" required >
-                        </div>
-                   
-                        <div class="col-md-4"><b>Producto</b>
-                            <input type="text" name="Producto" value="
-                            <?php echo htmlentities($result['id_producto']); ?>"
-                             class="form-control" required >
-                        </div> </div> </div>
+    <div class="row">
+      <div class="col-md-4"><b>Producto</b>
+        <input type="text" name="Producto" value="<?php echo htmlentities($result['id_producto']); ?>"class="form-control" required autocomplete="Off">
+      </div> 
+    </div> 
 
-                <?php } ?>
-                
-                <div class="container" class="row" style="margin-top:1%">
-                    <div class="col-md-8">
-                        <input type="submit" name="update-precaucion" value="Actualizar">
-                    </div></div></br>
-                </div>
-                </form>
-            </div>
-    </div> </div></div>
+    <?php } ?>
+    </br>  
+    <div style="margin-top:1%; text-align:center">
+            <input type="submit" name="update-precaucion" value="Actualizar">
+    </div>
+                  
+    </div>
+    </form>
+      </div>
+    </div> 
 
   <!-- copyright -->
+  <div class="mb-150"></div>
   <div class="copyright">
       <div class="container">
         <div class="row">

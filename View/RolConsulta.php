@@ -102,7 +102,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="breadcrumb-text">
-            <p>Visualiza, actuliza, agrega o elimina la información de los roles</p>
+            <p>Visualiza, actualiza, agrega o elimina la información de los roles</p>
             <h1>Roles</h1>
           </div>
         </div>
@@ -130,7 +130,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 
                         <thead>
                             <th>ID</th>
-                            <th>Descripcion</th>
+                            <th>Descripción</th>
                             <th>Actualizar</th>
                             <th>Eliminar</th>
 
@@ -147,6 +147,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
         </div>
     </div>  </div>  </div>  </div>
  <!-- copyright -->
+ <div class="mb-150"></div>
  <div class="copyright">
       <div class="container">
         <div class="row">

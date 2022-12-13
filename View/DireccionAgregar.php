@@ -122,20 +122,19 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 
 <form action ="" method="post">
 <div class="row">
-        <div class="col-md-4"><b>Direccion</b>
-            <input type="text" name="Direccion" class="form-control" required>
+        <div class="col-md-4"><b>Dirección</b>
+            <input type="text" name="Direccion" class="form-control" required autocomplete="Off">
         </div>
 
         <div class="col-md-4"><b>Distrito</b>
-            <input type="text" name="Distrito" class="form-control" required>
+            <input type="text" name="Distrito" class="form-control" required autocomplete="Off">
         </div>
     </div>
 
     <br/> 
-    <div class="row" style="margin-top:1%">
-        <div class="col-md-8">
-            <input type="submit" name='insert-direccion'value="Guardar" class ="submit">
-        </div>
+    <div style="margin-top:1%; text-align:center">
+      <input type="submit" name='insert-direccion'value="Guardar" class ="submit">
+    </div>
 
 </form>
 
@@ -144,6 +143,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 <!-------------------------------------- Fin  --------------------------------->
 
 <!-- copyright -->
+<div class="mb-150"></div>
 <div class="copyright">
       <div class="container">
         <div class="row">

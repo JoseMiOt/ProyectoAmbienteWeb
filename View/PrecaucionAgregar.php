@@ -114,37 +114,34 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 <!-------------------------------------- Agregar Datos ---------------------------->
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
 
-<form action ="" method="post">
-<div class="row">
-        <div class="col-md-4"><b>Efectos Secundarios</b>
-            <input type="text" name="Efectos" class="form-control" required>
-        </div>
+  <form action="" method="post">
+    <div class="row">
+          <div class="col-md-4"><b>Efectos Secundarios</b>
+              <input type="text" name="Efectos" class="form-control" required autocomplete="Off">
+          </div>
 
-        <div class="col-md-4"><b>Fecha</b>
-            <input type="text" name="Fecha" class="form-control" required>
-        </div>
+          <div class="col-md-4"><b>Fecha</b>
+              <input type="text" name="Fecha" class="form-control" required autocomplete="Off">
+          </div>
+
+          <div class="col-md-4"><b>Producto</b>
+              <input type="text" name="Producto" class="form-control" required autocomplete="Off">
+          </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-4"><b>Producto</b>
-            <input type="text" name="Producto" class="form-control" required>
-        </div></div>
+      <br/> 
+      <div style="margin-top:1%; text-align:center">
+        <input type="submit" name='insert-precaucion'value="Guardar" class ="submit">
+      </div>
 
-    <br/> 
-    <div class="row" style="margin-top:1%">
-        <div class="col-md-8">
-            <input type="submit" name='insert-precaucion'value="Guardar" class ="submit">
-        </div>
-
-</form>
+  </form>
 </div>
-</div></div></div>
+</div>
 
 <!-------------------------------------- Fin  --------------------------------->
   <!-- copyright -->
+  <div class="mb-150"></div>
   <div class="copyright">
       <div class="container">
         <div class="row">

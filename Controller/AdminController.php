@@ -81,7 +81,7 @@ function AgregarBitacora(){
 
     AgregarBitacoraModel($accion, $descripcion, $fecha);
 
-        echo "<script>alert('Agregado con exito');</script>";
+        //echo "<script>alert('Agregado con exito');</script>";
         echo "<script>window.location.href='BitacoraConsulta.php'</script>";
 
 }
@@ -137,8 +137,8 @@ function ConsultarUsuarios(){
                 class="btn btn-primary ">
                 <span class="glyphicon glyphicon-pencil"></span></button></a></td>
    
-                <td><a href="../Controller/AdminController.php?del=<?php echo htmlentities($fila['id_usuario']); ?>"><button
-                class="btn btn-danger" onClick="return confirm('¿Desea eliminar el usuario?');">
+                <td><a href="../Controller/AdminController.php?del=<?php echo htmlentities($fila['id_usuario']); ?>">
+                    <button class="btn btn-danger" onClick="return confirm('¿Desea eliminar el usuario?');">
                 <span class="glyphicon glyphicon-trash"></span></button></a></td>
 
 </tr>
@@ -303,7 +303,7 @@ function AgregarRol(){
     AgregarRolModel($rol_descripcion);
 
       
-        echo "<script>alert('Agregado con exito');</script>";
+        //echo "<script>alert('Agregado con exito');</script>";
         echo "<script>window.location.href='RolConsulta.php'</script>";
 
 }
@@ -402,7 +402,7 @@ function AgregarDireccion(){
     AgregarDireccionModel($direccion, $id_distrito);
 
       
-        echo "<script>alert('Agregado con exito');</script>";
+        //echo "<script>alert('Agregado con exito');</script>";
         echo "<script>window.location.href='DireccionConsulta.php'</script>";
 
 }
@@ -506,7 +506,7 @@ function AgregarFarmacia(){
     AgregarFarmaciaModel($nombre_far, $telefono, $horario, $id_direccion);
 
       
-        echo "<script>alert('Agregado con exito');</script>";
+        //echo "<script>alert('Agregado con exito');</script>";
         echo "<script>window.location.href='FarmaciaConsulta.php'</script>";
 
 }
@@ -631,7 +631,7 @@ function AgregarProducto(){
     AgregarProductoModel($marca, $nombre_prod, $descrip_prod, $cant_almacen, $precio,$url, $id_tipo_med, $id_farmacia);
 
       
-        echo "<script>alert('Agregado con exito');</script>";
+        //echo "<script>alert('Agregado con exito');</script>";
         echo "<script>window.location.href='ProductoConsulta.php'</script>";
 
 }
@@ -727,7 +727,7 @@ function AgregarPrecaucion(){
 
     AgregarPrecaucionModel($efectos_secundarios, $fecha_expiracion, $id_producto);
 
-        echo "<script>alert('Agregado con exito');</script>";
+        //echo "<script>alert('Agregado con exito');</script>";
         echo "<script>window.location.href='PrecaucionConsulta.php'</script>";
 
 }
@@ -819,7 +819,7 @@ function AgregarCategoria(){
 
     AgregarCategoriaModel($categoria_med, $descripcion_categoria_med);
 
-        echo "<script>alert('Agregado con exito');</script>";
+        //echo "<script>alert('Agregado con exito');</script>";
         echo "<script>window.location.href='CategoriaConsulta.php'</script>";
 
 }
@@ -910,7 +910,7 @@ function AgregarFactura(){
 
     AgregarFacturaModel($fecha, $id_usuario);
 
-        echo "<script>alert('Agregado con exito');</script>";
+        //echo "<script>alert('Agregado con exito');</script>";
         echo "<script>window.location.href='FacturaConsulta.php'</script>";
 
 }
@@ -1004,7 +1004,7 @@ function AgregarDetalle(){
 
     AgregarDetalleModel($id_factura, $id_producto, $total);
 
-        echo "<script>alert('Agregado con exito');</script>";
+        //echo "<script>alert('Agregado con exito');</script>";
         echo "<script>window.location.href='DetalleConsulta.php'</script>";
 
 }
@@ -1027,7 +1027,7 @@ if (isset($_REQUEST['deldetalle'])) {
 //-------------------------------------------------------------------
 
 
-//Consultar la cantiidad de datos en las tablas 
+//Consultar la cantidad de datos en las tablas 
 
 function CantidadDeDatosEnTablas()
 {

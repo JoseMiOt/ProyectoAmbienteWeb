@@ -81,7 +81,7 @@ if (session_status() == PHP_SESSION_NONE)
 						<div class="search-bar-tablecell">
 							<h3>Buscar Por:</h3>
 							<input type="text" placeholder="Palabras Clave:">
-							<a href="busqueda.php"> <button type="button">Buscar <i class="fas fa-search"></i></button></a>
+							<button type="submit">Buscar <i class="fas fa-search"></i></button>
 						</div>
 					</div>
 				</div>

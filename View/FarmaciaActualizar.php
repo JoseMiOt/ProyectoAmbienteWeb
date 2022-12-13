@@ -114,67 +114,49 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
   <!-- end breadcrumb section -->
 
   <br />
+  <div class="container">
+    <?php
+      $id_farmacia= intval($_GET['id']);
+      if ($result = ConsultarFarmaciaID($id_farmacia)) {
+    ?>
+    <form action="" method="post">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            </div>
+      <div class="row">
+        <div class="col-md-4"><b>ID</b>
+            <input type="text" name="id" value="<?php echo htmlentities($result['id_farmacia']);?>"class="form-control" required readonly>
         </div>
-        <?php
-        $id_farmacia= intval($_GET['id']);
-        if ($result = ConsultarFarmaciaID($id_farmacia)) {
-        ?>
 
+        <div class="col-md-4"><b>Nombre</b>
+            <input type="text" name="Nombre" value="<?php echo htmlentities($result['nombre_far']); ?>"class="form-control" required >
+        </div>
 
-                <form action = "" method="post">
+                  
+        <div class="col-md-4"><b>Teléfono</b>
+            <input type="text" name="Telefono" value="<?php echo htmlentities($result['telefono']);?>"class="form-control" required >
+        </div>
+        </div>
 
-                    <div class="row">
-                        <div class="col-md-4"><b>ID</b>
-                            <input type="text" name="id" value="
-                            <?php echo htmlentities($result['id_farmacia']); ?>"
-                             class="form-control" required readonly>
-                        </div>
-
-                        <div class="col-md-4"><b>Nombre</b>
-                            <input type="text" name="Nombre" value=
-                            "<?php echo htmlentities($result['nombre_far']); ?>"
-                             class="form-control" required >
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4"><b>Telefono</b>
-                            <input type="text" name="Telefono" value="
-                            <?php echo htmlentities($result['telefono']); ?>"
-                             class="form-control" required >
-                        </div>
-                        
-                        <div class="col-md-4"><b>Horario</b>
-                            <input type="text" name="Horario" value=
-                            "<?php echo htmlentities($result['horario']); ?>"
-                             class="form-control" required >
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4"><b>ID Direccion</b>
-                            <input type="text" name="Direccion" value="
-                            <?php echo htmlentities($result['id_direccion']); ?>"
-                             class="form-control" required >
-                        </div>
-                        </div>
-                <?php } ?>
-                
-                <div class="row" style="margin-top:1%">
-                    <div class="col-md-8">
-                        <input type="submit" name="update-farmacia" value="Actualizar">
-                    </div>
-                </div>
-                </form>
-            </div>
+      <div class="row">
+        <div class="col-md-4"><b>Horario</b>
+            <input type="text" name="Horario" value="<?php echo htmlentities($result['horario']); ?>"class="form-control" required >
+        </div>
+                  
+        <div class="col-md-4"><b>ID Dirección</b>
+            <input type="text" name="Direccion" value="<?php echo htmlentities($result['id_direccion']); ?>"class="form-control" required >
+        </div>
+      </div>
+      
+      <?php } ?>
+      </br>   
+      <div style="margin-top:1%; text-align:center">
+        <input type="submit" name="update-farmacia" value="Actualizar">
+      </div>
+  </form>
     </div>
+  </div>
 
  <!-- copyright -->
+ <div class="mb-150"></div>
  <div class="copyright">
       <div class="container">
         <div class="row">
