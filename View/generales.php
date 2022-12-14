@@ -23,11 +23,13 @@
         <link rel="stylesheet" href="assets/css/meanmenu.min.css">
         <!-- main style -->
         <link rel="stylesheet" href="assets/css/main.css">
+        <!-- menu hamburguesa style -->
+        <link rel="stylesheet" href="assets/css/estilos.css"">
         <!-- responsive -->
         <link rel="stylesheet" href="assets/css/responsive.css">';
   }
 
-  
+  //
   
   function footerIndex()
   {
@@ -50,6 +52,9 @@
         <script src="assets/js/jquery.meanmenu.min.js"></script>
         <!-- sticker js -->
         <script src="assets/js/sticker.js"></script>
+        <!-- button.js -->
+        <script src="assets/js/button.js"></script>
+        <script src="assets/js/inicio.js"></script>
         <!-- main js -->
         <script src="assets/js/main.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
