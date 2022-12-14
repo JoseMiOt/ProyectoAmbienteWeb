@@ -58,10 +58,41 @@ if(isset($_POST["bt_registrarse"]))
 if(isset($_POST["btn_Cerrar"]))
 {
     if (session_status() != PHP_SESSION_NONE)
+    {
         session_destroy();
-        
-    header("Location: \ProyectoAmbienteWeb\index.php");
+        header("Location: \ProyectoAmbienteWeb\index.php");
+        //header("Location: \Proyecto\index.php");
+    }
+    
 }
+
+function ConsultaUsuarioId($id)
+{
+    $datos = ConsultaUsuarioIdModel($id);
+    return mysqli_fetch_array($datos);
+}
+
+if(isset($_POST["btnActualizar"]))
+    {
+        $Id = $_POST["txtId"];
+        $Nombre = $_POST["txtNombre"];
+        $Apellidos = $_POST["txtApellidos"];
+        $Usuario = $_POST["txtUsuario"];
+        $Correo = $_POST["txtCorreo"];
+        $Contrasenna = $_POST["txtContrasenna"];
+        
+        $resultado = ActualizarUsuarioModel($Id, $Nombre, $Apellidos, $Usuario, $Correo, $Contrasenna);
+        
+        if($resultado == true)
+        {
+            header("Location: ../index.php");
+        }
+        else
+        {
+            header("Location: ../index.php");
+        }
+        
+    }
 
 
 

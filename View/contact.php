@@ -39,7 +39,7 @@ if (session_status() == PHP_SESSION_NONE)
 			<div class="container-menu">
 				<div class="cont-menu">
 					<nav>
-						<a href="#">
+						<a href="perfil.php">
 						<?php
 							if ($_SESSION != null) {
 								echo "Bienvenido ", $_SESSION["sesionNombre"];
@@ -181,20 +181,20 @@ if (session_status() == PHP_SESSION_NONE)
 				<div class="col-lg-8 mb-5 mb-lg-0">
 					<div class="form-title">
 						<h2>¿Tienes alguna pregunta?</h2>
-						<p>Aquí te respondemos todo sobre nuestro sitio web y servicios que brindamos!</p>
+						
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
 						<form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
 							<p>
-								<input type="text" placeholder="Nombre" name="name" id="name">
-								<input type="email" placeholder="Correo" name="email" id="email">
+								<input type="text" placeholder="Nombre" name="name" id="name" autocomplete="Off">
+								<input type="email" placeholder="Correo" name="email" id="email" autocomplete="Off">
 							</p>
 							<p>
-								<input type="tel" placeholder="Teléfono" name="phone" id="phone">
-								<input type="text" placeholder="Asunto" name="subject" id="subject">
+								<input type="tel" placeholder="Teléfono" name="phone" id="phone" autocomplete="Off">
+								<input type="text" placeholder="Asunto" name="subject" id="subject" autocomplete="Off">
 							</p>
-							<p><textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje"></textarea></p>
+							<p><textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje" autocomplete="Off"></textarea></p>
 							<input type="hidden" name="token" value="FsWga4&@f6aw" />
 							<p><input type="submit" value="Enviar"></p>
 						</form>

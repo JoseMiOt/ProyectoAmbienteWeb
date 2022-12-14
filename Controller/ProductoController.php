@@ -109,6 +109,7 @@ function MuestraTotal($IdUsuario)
     return mysqli_fetch_array($datos);
 }
 
+
 ?>
 
 <script src="../assets/js/agregarCantC.js"></script>

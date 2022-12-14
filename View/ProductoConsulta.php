@@ -107,12 +107,10 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 
   <br />
   <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="btn-group pull-left">
-        <a href="ProductoAgregar.php"><button type="button" class="btn btn-primary">Agregar Productos</button></a>
-      </div>
+    <a href="ProductoAgregar.php"><button type="button" class="btn btn-primary">Agregar Productos</button></a>
+  </div>
       <br/> <br />
+<body>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -143,7 +141,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                 </div>
             </div>
         </div>
-    </div></div></div></div></br>
+    </div>
 
  <!-- copyright -->
  <div class="mb-150"></div>

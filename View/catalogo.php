@@ -41,7 +41,7 @@ if (session_status() == PHP_SESSION_NONE)
 			<div class="container-menu">
 				<div class="cont-menu">
 					<nav>
-						<a href="#">
+						<a href="perfil.php">
 						<?php
 							if ($_SESSION != null) {
 								echo "Bienvenido ", $_SESSION["sesionNombre"];

@@ -42,7 +42,7 @@ if (session_status() == PHP_SESSION_NONE)
 			<div class="container-menu">
 				<div class="cont-menu">
 					<nav>
-						<a href="#">
+						<a href="perfil.php">
 						<?php
 							if ($_SESSION != null) {
 								echo "Bienvenido ", $_SESSION["sesionNombre"];
@@ -204,7 +204,7 @@ if (session_status() == PHP_SESSION_NONE)
 									</div>
 									<div class="content">
 										<h3>Excelentes Precios</h3>
-										<p>Ofrecemos los mejores precios en nuestros productos para que no pierdas la oportunidad..</p>
+										<p>Ofrecemos los mejores precios en nuestros productos para que no pierdas la oportunidad.</p>
 									</div>
 								</div>
 							</div>
@@ -215,7 +215,7 @@ if (session_status() == PHP_SESSION_NONE)
 									</div>
 									<div class="content">
 										<h3>Calidad En Productos</h3>
-										<p>No te preocupes por la calidad de nuestros productos, nosotros te aseguramos 100% que son lo mejor del mercado..</p>
+										<p>No te preocupes por la calidad de nuestros productos, nosotros te aseguramos 100% que son lo mejor del mercado.</p>
 									</div>
 								</div>
 							</div>
@@ -249,13 +249,13 @@ if (session_status() == PHP_SESSION_NONE)
 	<!-- end shop banner -->
 
 	<!-- team section -->
-	<div class="mt-150">
+	<!--<div class="mt-150">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">
 						<h3>Nuestro <span class="orange-text">Equipo</span></h3>
-						<p>Presentamos a nuestro diseñadores web que crearon nuestra página web.</p>
+						
 					</div>
 				</div>
 			</div>
@@ -273,7 +273,7 @@ if (session_status() == PHP_SESSION_NONE)
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="single-team-item">
-						<div class="team-bg team-bg-2"></div>
+						<div class="team-bg team-bg-1"></div>
 						<h4>Mario Molina <span>Estudiante</span></h4>
 						<ul class="social-link-team">
 							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
@@ -282,20 +282,10 @@ if (session_status() == PHP_SESSION_NONE)
 						</ul>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="single-team-item">
-						<div class="team-bg team-bg-3"></div>
-						<h4>Ricardo Villalobos <span>Estudiante</span></h4>
-						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
+				
 				<div class="col-lg-3 col-md-6 offset-md-3 offset-lg-0">
 					<div class="single-team-item">
-						<div class="team-bg team-bg-4"></div>
+						<div class="team-bg team-bg-3"></div>
 						<h4>Zeneth Corella <span>Estudiante</span></h4>
 						<ul class="social-link-team">
 							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
@@ -306,7 +296,7 @@ if (session_status() == PHP_SESSION_NONE)
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<!-- end team section -->
 
 	<!-- testimonail-section -->
@@ -320,9 +310,9 @@ if (session_status() == PHP_SESSION_NONE)
 								<img src="../assets/img/avatar1.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>José Miranda <span>Estudiante</span></h3>
+								<h3>José Miranda <span>Desarrollador</span></h3>
 								<p class="testimonial-body">
-									" Encargado de diseñar la arquitectura y desarrollo de nuestro sitio. "
+									" Encargado de diseñar la arquitectura y desarrollo de nuestro sitio "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -334,7 +324,7 @@ if (session_status() == PHP_SESSION_NONE)
 								<img src="../assets/img/avatar2.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Mario Molina <span>Estudiante</span></h3>
+								<h3>Mario Molina <span>Desarrollador</span></h3>
 								<p class="testimonial-body">
 									" Soluciona errores o problemas que puede presentarse en nuestra página "
 								</p>
@@ -348,9 +338,9 @@ if (session_status() == PHP_SESSION_NONE)
 								<img src="../assets/img/avatar3.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Ricardo Villalobos <span>Estudiante</span></h3>
+								<h3>Ricardo Villalobos <span>Desarrollador</span></h3>
 								<p class="testimonial-body">
-									" Diseña y desarrolla nuevas funciones para la comodidad de nuestros usuarios. "
+									" Diseña y desarrolla nuevas funciones para la comodidad de nuestros usuarios "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -362,9 +352,9 @@ if (session_status() == PHP_SESSION_NONE)
 								<img src="../assets/img/avatar4.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Zeneth Corella <span>Estudiante</span></h3>
+								<h3>Zeneth Corella <span>Desarrollador</span></h3>
 								<p class="testimonial-body">
-									" Ayuda a mantener nuestra página actualizada "
+									" Ayuda a mantener nuestra página actualizadaAyuda a mantener nuestra página actualizada "	
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>

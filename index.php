@@ -43,7 +43,7 @@ if (session_status() == PHP_SESSION_NONE)
 			<div class="container-menu">
 				<div class="cont-menu">
 					<nav>
-						<a href="#">
+						<a href="View/perfil.php">
 						<?php
 							if ($_SESSION != null) {
 								echo "Bienvenido ", $_SESSION["sesionNombre"];
@@ -277,7 +277,7 @@ if (session_status() == PHP_SESSION_NONE)
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">	
 						<h3><span class="orange-text">Nuestros</span> Productos</h3>
-						<p>FarmaWeb ofrece los mejores productos a los mejores precios del mercado, dando una amplia gama de medicamentos que se ocupa para el bienestar de tu familia.</p>
+						<p>Lista de productos al mejor precio.</p>
 					</div>
 				</div>
 			</div>
@@ -313,7 +313,7 @@ if (session_status() == PHP_SESSION_NONE)
                 <div class="content-column col-lg-6">
 					<h3><span class="orange-text">Oferta</span> del Mes</h3>
                     <h4>Cofal Fuerte</h4>
-                    <div class="text">¿Dolores musculares? No será más problema con nuestra oferta del mes, el ungüento #1 del país para tratar dolores está disponible en nuestra farmacia a un precio unico para para que aproveches.</div>
+                    <div class="text">¡Aprovecha ahora! No lo encontrarás por mejor precio</div>
                     <!--Countdown Timer-->
                     <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2022/12/25"><div class="counter-column"><div class="inner"><span class="count">00</span>Días</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Horas</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Segs</div></div></div></div>
                 	<a href="#" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
@@ -336,7 +336,7 @@ if (session_status() == PHP_SESSION_NONE)
 							<div class="client-meta">
 								<h3>José Miranda <span>Desarrollador</span></h3>
 								<p class="testimonial-body">
-									" Encargado de diseñar la arquitectura y desarrollo de nuestro sitio. "
+									" Encargado de diseñar la arquitectura y desarrollo de nuestro sitio "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -362,9 +362,9 @@ if (session_status() == PHP_SESSION_NONE)
 								<img src="assets/img/avatar3.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Ricardo Villalobos  <span>Desarrollador</span></h3>
+								<h3>Ricardo Villalobos <span>Desarrollador</span></h3>
 								<p class="testimonial-body">
-									" Diseña y desarrolla nuevas funciones para la comodidad de nuestros usuarios. "
+									" Diseña y desarrolla nuevas funciones para la comodidad de nuestros usuarios "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -378,7 +378,7 @@ if (session_status() == PHP_SESSION_NONE)
 							<div class="client-meta">
 								<h3>Zeneth Corella <span>Desarrollador</span></h3>
 								<p class="testimonial-body">
-									" Ayuda a mantener nuestra página actualizada. "
+									" Ayuda a mantener nuestra página actualizadaAyuda a mantener nuestra página actualizada "	
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -405,8 +405,8 @@ if (session_status() == PHP_SESSION_NONE)
 					<div class="abt-text">
 						<p class="top-sub">Desde El Año 2022</p>
 						<h2>Somos <span class="orange-text">FarmaWeb</span></h2>
-						<p>Bienvenidos a FarmaWeb un sitio donde puedes encontrar tus productos de farmacia de manera rápida y eficiente desde la comodidad de tu casa. Ofrecemos un catálogo donde podrás ver nuestros productos disponibles y el precio, también presentamos ofertas que no te puedes perder cada mes.</p>
-						<p>El bienestar de tu familia es importante y aquí en FarmaWeb nos preocupamos de que puedas encontrar todo lo que necesitas para lograrlo.</p>
+						<p>Ofrecer una asistencia sanitaria de calidad, para alcanzar y mantener la salud, ofreciendo servicios farmacéuticos y productos, de forma profesional, servicial y cercana.</p>
+						<p>Con respecto a nuestros usuarios: facilitar un rápido acceso a los productos que precisen, primando los servicios profesionales, para que saquen el máximo beneficio a sus medicamentos.</p>
 						<a href="View/acerca.php" class="boxed-btn mt-4">Conócenos</a>
 					</div>
 				</div>
@@ -432,8 +432,8 @@ if (session_status() == PHP_SESSION_NONE)
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">	
-						<h3><span >Nuestras </span> <span class="orange-text"> Farmacias</span></h3>
-						<p>Encuentra las mejores farmacias del país.</p>
+						<h3><span >Más </span> <span class="orange-text"> Farmacias</span></h3>
+						<p>Sitios Web de Farmacias en Costa Rica</p>
 					</div>
 				</div>
 			</div>
@@ -448,8 +448,8 @@ if (session_status() == PHP_SESSION_NONE)
 								<span class="author"><i class="fas fa-capsules"></i> Farmacia</span>
 								<span class="date"><i class="fas fa-compass"></i> San José, Curridabat</span>
 							</p>
-							<p class="excerpt">Fishel la cadena más grande de Farmacias de Conveniencia de Costa Rica. Con regentes listos para brindarte todo lo que necesitás con la mejor atención.</p>
-							<a href="" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
+							<p class="excerpt">Farmacias Fischel, unión familiar y visión empresarial.Ayudando a sus fondos de inversión, mientras cuidas tu cuerpo.</p>
+							<a href="https://www.fischelenlinea.com/categorias/Bienestar-Natural-51?utm_source=google&utm_medium=paidsearch&utm_campaign=%5BCuestamoras%5D_%5BFischel%5D_SR_Always_On_Categorias_Conversiones_Diario&gclid=Cj0KCQiA4uCcBhDdARIsAH5jyUmo9RKv60UvSr9myQnmJAJ5dMIo80J3kqo2KrB4FYIvy-Z_BjSK9e0aAmB-EALw_wcB" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -462,8 +462,8 @@ if (session_status() == PHP_SESSION_NONE)
 								<span class="author"><i class="fas fa-capsules"></i> Farmacia</span>
 								<span class="date"><i class="fas fa-compass"></i> Cartago, Paraíso</span>
 							</p>
-							<p class="excerpt">Somos la cadena de farmacias de descuento más grande, con presencia en 8 países, con más de 300 puntos de venta especializados en atender al cliente.</p>
-							<a href="" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
+							<p class="excerpt">Servicio y Distribución de productos farmacéuticos al mejor precio, brindando la mejor atención, con personal capacitado</p>
+							<a href="https://farmavalue.biz/costarica/" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -476,17 +476,13 @@ if (session_status() == PHP_SESSION_NONE)
 								<span class="author"><i class="fas fa-capsules"></i> Farmacia</span>
 								<span class="date"><i class="fas fa-compass"></i> San José, Sabanilla</span>
 							</p>
-							<p class="excerpt">Encontrá el precio más bajo en nuestra farmacia en línea. Encontrá tus productos favoritos en nuestra farmacia en línea.</p>
-							<a href="" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
+							<p class="excerpt">Comprá en nuestras Farmacias y automáticamente acumulás puntos que luego podes canjear por increíbles descuentos.</p>
+							<a href="https://farmacialabomba.com/" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<a href="" class="boxed-btn">Más Farmacias</a>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 	<!-- end latest news -->

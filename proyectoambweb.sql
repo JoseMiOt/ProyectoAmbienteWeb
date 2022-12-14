@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3308
--- Tiempo de generación: 14-12-2022 a las 06:18:04
+-- Tiempo de generación: 14-12-2022 a las 21:59:58
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -139,6 +139,19 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualiza_cantidad` (IN `pId_pro
 UPDATE tb_carrito
 SET cant_comprar = pCantidad
 WHERE id_producto = pId_producto;
+
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualiza_perfil` (IN `pId_usuario` INT, IN `pNombre` VARCHAR(25), IN `pApellidos` VARCHAR(30), IN `pUsuario` VARCHAR(20), IN `pCorreo` VARCHAR(50), IN `pContrasenna` VARCHAR(255))   BEGIN
+
+UPDATE tb_usuario
+
+SET nombre = pNombre,
+apellidos = pApellidos,
+usuario = pUsuario,
+correo = pCorreo,
+clave = pContrasenna
+WHERE id_usuario = pId_usuario;
 
 END$$
 
@@ -441,6 +454,14 @@ FROM tb_usuario;
 
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_usuario_id` (IN `pIdUsuario` INT)   BEGIN
+
+SELECT * 
+FROM tb_usuario
+WHERE id_usuario = pIdUsuario;
+
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consulta_carrito` (IN `pId_Usuario` INT)   BEGIN
 
 SELECT C.id_carrito,C.cant_comprar,C.id_usuario, P.*
@@ -681,7 +702,8 @@ CREATE TABLE `tb_carrito` (
 INSERT INTO `tb_carrito` (`id_carrito`, `cant_comprar`, `id_usuario`, `id_producto`) VALUES
 (214, 1, 1, 5),
 (217, 2, 1, 4),
-(218, 1, 1, 8);
+(218, 1, 1, 8),
+(219, 2, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -1496,7 +1518,7 @@ ALTER TABLE `tb_canton`
 -- AUTO_INCREMENT de la tabla `tb_carrito`
 --
 ALTER TABLE `tb_carrito`
-  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
+  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_categoria_producto`
@@ -1544,7 +1566,7 @@ ALTER TABLE `tb_precaucion`
 -- AUTO_INCREMENT de la tabla `tb_producto`
 --
 ALTER TABLE `tb_producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_provincia`
