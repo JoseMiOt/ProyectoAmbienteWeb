@@ -117,7 +117,17 @@ if (session_status() == PHP_SESSION_NONE)
 									
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="View/carrito.php"><i class="fas fa-shopping-cart"></i></a>
+										<?php
+											if ($_SESSION != null) {
+										?>
+												<a class="shopping-cart" href="View/carrito.php"><i class="fas fa-shopping-cart"></i></a>
+										<?php
+											}else{
+										?>
+												<a class="shopping-cart" href="View/login.php"><i class="fas fa-shopping-cart"></i></a>
+										<?php
+											}
+										?>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 										<a class="usuario" href="View/login.php"><i class="fas fa-user"></i></a>
 										<!--<a class="usuario" href="login.php"><i class="fas fa-sign-out-alt"></i></a>-->

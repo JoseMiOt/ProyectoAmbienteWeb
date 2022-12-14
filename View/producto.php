@@ -50,7 +50,6 @@ if (session_status() == PHP_SESSION_NONE)
 							<ul>
 								<?php
 									if ($_SESSION != null) {
-										echo "Bienvenido ", $_SESSION["sesionNombre"];
 	
 										if ($_SESSION["sesionTipoRol"] == 1) {
 											echo '<li><a href="../index.php">Inicio</a></li>
@@ -78,8 +77,7 @@ if (session_status() == PHP_SESSION_NONE)
 									<div class="header-icons">
 										<a class="shopping-cart" href="carrito.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<a class="usuario" href="login.php"><i class="fas fa-user"></i></a>										
-										<a class="usuario" href="login.php"><i class="fas fa-sign-out-alt"></i></a>
+										<a class="usuario" href="login.php"><i class="fas fa-user"></i></a>
 									</div>
 								</li>
 							</ul>
