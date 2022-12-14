@@ -100,6 +100,20 @@ if (isset($_POST['IdProductoAC'],$_POST['Cantidad'])) {
     AgregaCarritoCantModel($_POST['IdProductoAC'], $_SESSION["sesionId"],$_POST['Cantidad']);
 }
 
+function ActualizaCantidadModel($IdProducto,$Cantidad)
+{
+    $conn = OpenBD();
+
+    $procedimiento = "call sp_actualiza_cantidad($IdProducto,$Cantidad);";
+    $conn -> query($procedimiento);
+
+    CloseBD($conn);
+}
+
+if (isset($_POST['Funcion'])) {
+    ActualizaCantidadModel($_POST['IdProductoSP'],$_POST['Cant']);
+}
+
 function MuestraTotalModel($IdUsuario)
 {
     $enlace = OpenBD();

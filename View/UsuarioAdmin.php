@@ -67,7 +67,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                
                 <li>
                   <div class="header-icons">
-                    <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="shopping-cart" href="carrito.php"><i class="fas fa-shopping-cart"></i></a>
                     <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                     <a class="usuario" href="login.php"><i class="fas fa-user"></i></a>
                     <a class="usuario" href="login.php"><i class="fas fa-sign-out-alt"></i></a>
@@ -110,7 +110,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="breadcrumb-text">
-            <p>Visualiza, actuliza, agrega o elimina la información de los usuarios</p>
+            <p>Visualiza, actualiza, agrega o elimina la información de los usuarios</p>
             <h1>Usuarios</h1>
           </div>
         </div>
@@ -160,6 +160,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
  <!-------------------------------------- Fin tabla ------------------------------------------->
 
       <!-- copyright -->
+      <div class="mb-150"></div>
       <div class="copyright">
         <div class="container">
           <div class="row">

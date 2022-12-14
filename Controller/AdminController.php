@@ -172,7 +172,7 @@ function AgregarUsuario(){
 
     if ($enlace->query($sql) == true) {
         // Message for successfull insertion
-        echo "<script>alert('Record inserted successfully');</script>";
+        //echo "<script>alert('Record inserted successfully');</script>";
         echo "<script>window.location.href='../View/UsuarioAdmin.php'</script>";
     } else {
         // Message for unsuccessfull insertion

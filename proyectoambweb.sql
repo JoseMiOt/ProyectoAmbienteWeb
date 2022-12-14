@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3308
--- Tiempo de generación: 13-12-2022 a las 05:21:01
+-- Tiempo de generación: 14-12-2022 a las 06:18:04
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -134,11 +134,11 @@ WHERE id_usuario = pId_usuario;
 
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualiza_cantidad` (IN `pId_carrito` INT, IN `pCantidad` INT)   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualiza_cantidad` (IN `pId_producto` INT, IN `pCantidad` INT)   BEGIN
 
 UPDATE tb_carrito
 SET cant_comprar = pCantidad
-WHERE id_carrito = pId_carrito;
+WHERE id_producto = pId_producto;
 
 END$$
 
@@ -434,6 +434,13 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_usuario` (IN `pCorreo`
 
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_usuarioVista` ()   BEGIN
+
+SELECT *
+FROM tb_usuario;
+
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consulta_carrito` (IN `pId_Usuario` INT)   BEGIN
 
 SELECT C.id_carrito,C.cant_comprar,C.id_usuario, P.*
@@ -666,6 +673,15 @@ CREATE TABLE `tb_carrito` (
   `id_usuario` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tb_carrito`
+--
+
+INSERT INTO `tb_carrito` (`id_carrito`, `cant_comprar`, `id_usuario`, `id_producto`) VALUES
+(214, 1, 1, 5),
+(217, 2, 1, 4),
+(218, 1, 1, 8);
 
 -- --------------------------------------------------------
 
@@ -1355,7 +1371,6 @@ CREATE TABLE `tb_usuario` (
 
 INSERT INTO `tb_usuario` (`id_usuario`, `nombre`, `apellidos`, `usuario`, `correo`, `clave`, `id_rol`) VALUES
 (1, 'admin_nombre', 'admin_apellidos', 'SYSDATA_admin', 'admin@gmail.com', '12345', 1),
-(2, 'usuario_nombre', 'usuario_apellido', 'Usuario#1', 'usuario@gmail.com', '12345', 2),
 (5, 'Mario', 'Molina Medal', 'Mario523', 'mmolina00702@ufide.ac.cr', '12345', 1),
 (6, 'Jose', 'Miranda', 'josemiranda11', 'prueba@gmail.com', '12345', 2),
 (12, 'Jose', 'Miranda', 'miranda30', 'miranda30@gmail.com', '12345', 2);
@@ -1481,7 +1496,7 @@ ALTER TABLE `tb_canton`
 -- AUTO_INCREMENT de la tabla `tb_carrito`
 --
 ALTER TABLE `tb_carrito`
-  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
+  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_categoria_producto`
@@ -1547,7 +1562,7 @@ ALTER TABLE `tb_rol`
 -- AUTO_INCREMENT de la tabla `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas

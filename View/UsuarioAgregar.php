@@ -102,7 +102,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
       <div class="row">
         <div class="col-lg-8 offset-lg-2 text-center">
           <div class="breadcrumb-text">
-            <p>Actuliza la información de los usuarios</p>
+            <p>Actualiza la información de los usuarios</p>
             <h1>Usuarios</h1>
           </div>
         </div>
@@ -120,38 +120,35 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 <form action ="../Controller/AdminController.php" method="post">
     <div class="row">
         <div class="col-md-4"><b>Nombre</b>
-            <input type="text" name="nombre" class="form-control" required>
+            <input type="text" name="nombre" class="form-control" required autocomplete="Off">
         </div>
 
         <div class="col-md-4"><b>Apellidos</b>
-            <input type="text" name="apellidos" class="form-control" required>
+            <input type="text" name="apellidos" class="form-control" required autocomplete="Off">
         </div>
-    </div>
 
-    <div class="row">
         <div class="col-md-4"><b>Usuario</b>
-            <input type="text" name="usuario" class="form-control" required>
+            <input type="text" name="usuario" class="form-control" required autocomplete="Off">
         </div>
+      </div>
 
+      <div class="row">
         <div class="col-md-4"><b>Correo</b>
-            <input type="email" name="correo" class="form-control" required>
+            <input type="email" name="correo" class="form-control" required autocomplete="Off">
         </div>
-    </div>
 
-    <div class="row">
         <div class="col-md-4"><b>Clave</b>
-            <input type="password" name="clave" class="form-control" required>
+            <input type="password" name="clave" class="form-control" required autocomplete="Off">
         </div>
 
         <div class="col-md-4"><b>Rol</b>
-            <input type="number" name="id_rol" class="form-control" required>
+            <input type="text" name="id_rol" class="form-control" required autocomplete="Off">
         </div>
     </div>
 
-    <div class="row" style="margin-top:1%">
-        <div class="col-md-8">
-            <input type="submit" name='insert-usuario'value="Guardar" class ="submit">
-        </div>
+    </br>
+    <div style="margin-top:1%; text-align:center">
+      <input type="submit" name='insert-usuario'value="Guardar" class ="submit">
     </div>
 </form>
 
@@ -161,6 +158,7 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
 
 
 <!-------------------------------------- Fin  ------------------------------------------->    <!-- copyright -->
+    <div class="mb-150"></div>    
     <div class="copyright">
       <div class="container">
         <div class="row">

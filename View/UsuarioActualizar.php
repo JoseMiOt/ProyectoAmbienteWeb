@@ -129,51 +129,44 @@ if ($result = ConsultarUsuario($userid)) {
 
             <div class="row">
                 <div class="col-md-4"><b>Nombre</b>
-                    <input type="text" name="nombre" value="<?php echo htmlentities($result['nombre']); ?>"
-                        class="form-control" required>
+                    <input type="text" name="nombre" value="<?php echo htmlentities($result['nombre']); ?>" class="form-control" required autocomplete="Off">
                 </div>
 
                 <div class="col-md-4"><b>apellidos</b>
-                    <input type="text" name="apellidos" value="<?php echo htmlentities($result['apellidos']); ?>"
-                        class="form-control" required>
+                    <input type="text" name="apellidos" value="<?php echo htmlentities($result['apellidos']); ?>" class="form-control" required autocomplete="Off">
                 </div>
-            </div>
+            
 
-            <div class="row">
                 <div class="col-md-4"><b>usuario</b>
-                    <input type="text" name="usuario" value="<?php echo htmlentities($result['usuario']); ?>"
-                        class="form-control" required>
+                    <input type="text" name="usuario" value="<?php echo htmlentities($result['usuario']); ?>" class="form-control" required autocomplete="Off">
                 </div>
+              </div>
 
+              <div class="row">
                 <div class="col-md-4"><b>correo</b>
-                    <input type="email" name="correo" value="<?php echo htmlentities($result['correo']); ?>"
-                        class="form-control" maxlength="10" required>
+                    <input type="email" name="correo" value="<?php echo htmlentities($result['correo']); ?>" class="form-control" maxlength="10" required autocomplete="Off">
                 </div>
-            </div>
 
-            <div class="row">
                 <div class="col-md-4"><b>Clave</b>
-                    <input type="text" name="clave" value="<?php echo htmlentities($result['clave']); ?>"
-                        class="form-control" required>
+                    <input type="text" name="clave" value="<?php echo htmlentities($result['clave']); ?>" class="form-control" required autocomplete="Off">
                 </div>
 
                 <div class="col-md-4"><b>rol</b>
-                    <input type="text" name="id_rol" value="<?php echo htmlentities($result['id_rol']); ?>"
-                        class="form-control" maxlength="10" required>
+                    <input type="text" name="id_rol" value="<?php echo htmlentities($result['id_rol']); ?>" class="form-control" maxlength="10" required autocomplete="Off">
                 </div>
-            </div>
+              </div>
             <?php } ?>
-
-            <div class="row" style="margin-top:1%">
-                <div class="col-md-8">
+            
+            </br>
+            <div style="margin-top:1%; text-align:center">
                     <input type="submit" name="update-usuario" value="Actualizar">
-                </div>
             </div>
         </form>
     </div>
     </div>
     
     <!-- copyright -->
+    <div class="mb-150"></div>
     <div class="copyright">
       <div class="container">
         <div class="row">

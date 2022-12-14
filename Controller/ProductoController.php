@@ -89,7 +89,14 @@ function ConsultaCarrito($IdUsuario)
 			echo '<td class="product-image"><img src="../' . $fila["url"] . '" alt=""></td>';
 			echo '<td class="product-name">' . $fila["nombre_prod"] . '</td>';
 			echo '<td class="product-price">₡' . $fila["precio"] . '</td>';
-			echo '<td class="product-quantity"><input type="number" placeholder="0" min="1" max="10" value="0"></td>';
+			echo '<td class="product-quantity"><select onchange="AgregarCarritoCant2('.$fila["id_producto"].')" class="form-control" id="inputCant'.$fila["id_producto"].'" name="inputCant">';
+            echo '<option value="Select" selected>Seleccionar</option>';
+            echo '<option value="1">1</option>';
+            echo '<option value="2">2</option>';
+            echo '<option value="3">3</option>';
+            echo '<option value="4">4</option>';
+            echo '<option value="5">5</option>';
+            echo '<option value="6">6</option></select></td>';
 			echo '<td class="product-total">' . $fila["cant_comprar"] . '</td>';
 			echo '</tr>';
         }
@@ -103,4 +110,6 @@ function MuestraTotal($IdUsuario)
 }
 
 ?>
+
+<script src="../assets/js/agregarCantC.js"></script>
 
