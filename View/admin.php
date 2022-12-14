@@ -48,11 +48,6 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                         <!-- menu start -->
                         <nav class="main-menu navbar-expand topbar">
                             <ul>
-                                <?php //Mejorar color, forma de visualización
-                                if ($_SESSION != null) {
-                                    echo "Bienvenido ", $_SESSION["sesionNombre"];
-                                }
-                                ?>
                                 <li><a href="../index.php">Inicio</a></li>
                                 <li><a href="acerca.php">Acerca De</a></li>
                                 <li><a href="catalogo.php">Catálogo</a></li>
@@ -67,12 +62,8 @@ include_once __DIR__ . '\..\Controller\AdminController.php';
                                         <a class="mobile-hide search-bar-icon" href="#"><i
                                                 class="fas fa-search"></i></a>
                                         <a class="usuario" href="login.php"><i class="fas fa-user"></i></a>
-                                        <a class="usuario" href="login.php"><i class="fas fa-sign-out-alt"></i></a>
                                     </div>
                                 </li>
-
-
-
                             </ul>
                         </nav>
                         <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>

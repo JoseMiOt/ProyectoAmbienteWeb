@@ -12,8 +12,8 @@ if (session_status() == PHP_SESSION_NONE)
 <!DOCTYPE html>
 <head>
 
-	<!-- title -->
-	<title>FarmaWeb</title>
+<!-- title -->
+<title>FarmaWeb</title>
 	<?php
 		index();
 	?>
@@ -31,24 +31,24 @@ if (session_status() == PHP_SESSION_NONE)
 	
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
+		<?php
+		if ($_SESSION != null) {
+		?>
 		<div class="container">
 			<div class="btn-menu">
 				<label for="btn-menu">☰</label>
 			</div>
 
-			<!--	--------------->
 			<input type="checkbox" id="btn-menu">
 			<div class="container-menu">
 				<div class="cont-menu">
 					<nav>
 						<a href="#">
-							<?php
+						<?php
 							if ($_SESSION != null) {
 								echo "Bienvenido ", $_SESSION["sesionNombre"];
-								}else {
-									echo "No ha iniciado sesión";
 								}
-							?>
+						?>
 						</a>
 						<br>
 						<a>
@@ -59,8 +59,6 @@ if (session_status() == PHP_SESSION_NONE)
 								</form>
 							
 							<?php
-								}else {
-									echo "Si no tiene cuente registrese";
 								}
 							?>
 						</a>
@@ -69,16 +67,25 @@ if (session_status() == PHP_SESSION_NONE)
 				</div>
 			</div>
 		</div>	
+		<?php
+		}
+		?>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 text-center">
 					<div class="main-menu-wrap">	
-						<!-- logo -->
-						<div class="site-logo">
-							<div href="">
-								<img src="assets/img/logo.png" alt="">
+						<?php //Mejorar color, forma de visualización
+							if ($_SESSION == null) {
+						?>
+							<!-- logo -->
+							<div class="site-logo">
+								<div href="">
+									<img src="assets/img/logo.png" alt="">
+								</div>
 							</div>
-						</div>
+						<?php
+							}
+						?>
 						<!-- logo -->
 
 						<!-- menu start -->

@@ -27,16 +27,61 @@ if (session_status() == PHP_SESSION_NONE)
 	
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
+		<?php
+		if ($_SESSION != null) {
+		?>
+		<div class="container">
+			<div class="btn-menu">
+				<label for="btn-menu">☰</label>
+			</div>
+
+			<input type="checkbox" id="btn-menu">
+			<div class="container-menu">
+				<div class="cont-menu">
+					<nav>
+						<a href="#">
+						<?php
+							if ($_SESSION != null) {
+								echo "Bienvenido ", $_SESSION["sesionNombre"];
+								}
+						?>
+						</a>
+						<br>
+						<a>
+							<?php
+							if ($_SESSION != null) {?>
+								<form action="" method="post">
+									<input type="submit" class="submit" value="Cerrar Sesión" id="btn_Cerrar" name="btn_Cerrar">
+								</form>
+							
+							<?php
+								}
+							?>
+						</a>
+					</nav>
+					<label for="btn-menu">✖️</label>
+				</div>
+			</div>
+		</div>	
+		<?php
+		}
+		?>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 text-center">
-					<div class="main-menu-wrap">
-						<!-- logo -->
-						<div class="site-logo">
-							<a href="../index.php">
-								<img src="../assets/img/logo.png" alt="">
-							</a>
-						</div>
+					<div class="main-menu-wrap">	
+						<?php //Mejorar color, forma de visualización
+							if ($_SESSION == null) {
+						?>
+							<!-- logo -->
+							<div class="site-logo">
+								<div href="">
+									<img src="../assets/img/logo.png" alt="">
+								</div>
+							</div>
+						<?php
+							}
+						?>
 						<!-- logo -->
 
 						<!-- menu start -->
@@ -44,8 +89,6 @@ if (session_status() == PHP_SESSION_NONE)
 							<ul>
 								<?php 
 									if ($_SESSION != null) {
-										echo "Bienvenido ", $_SESSION["sesionNombre"];
-	
 										if ($_SESSION["sesionTipoRol"] == 1) {
 											echo '<li><a href="../index.php">Inicio</a></li>
 											<li><a href="acerca.php">Acerca De</a></li>
@@ -72,8 +115,7 @@ if (session_status() == PHP_SESSION_NONE)
 									<div class="header-icons">
 										<a class="" href="carrito.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<a class="usuario" href="login.php"><i class="fas fa-user"></i></a>	
-										<a class="usuario" href="login.php"><i class="fas fa-sign-out-alt"></i></a>									
+										<a class="usuario" href="login.php"><i class="fas fa-user"></i></a>
 									</div>
 								</li>
 							</ul>
