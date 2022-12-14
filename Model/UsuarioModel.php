@@ -48,4 +48,12 @@ function ActualizarUsuarioModel($Id, $Nombre, $Apellidos, $Usuario, $Correo, $Co
     return $resultado;
 }
 
+function DatosUsuarioCarritoModel($IdUsuario){
+    $enlace = OpenBD();
+    $procedimiento = "call sp_datos_usuario_carrito($IdUsuario);";
+    $datos = $enlace -> query($procedimiento);
+    CloseBD($enlace);
+    return $datos;
+}
+
 ?>

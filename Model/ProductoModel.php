@@ -125,6 +125,28 @@ function MuestraTotalModel($IdUsuario)
     return $datos;
 }
 
+function ListarProductosModel(){
+    $enlace = OpenBD();
+    $procedimiento = "call sp_consulta_productos();";
+    $datos = $enlace -> query($procedimiento);
+    CloseBD($enlace);
+    return $datos;
+}
 
+function DatosProductosCarritoModel($IdUsuario){
+    $enlace = OpenBD();
+    $procedimiento = "call sp_total_articulos_carrito($IdUsuario);";
+    $datos = $enlace -> query($procedimiento);
+    CloseBD($enlace);
+    return $datos;
+}
+
+function RealizarCompraModel($IdUsuario){
+    $enlace = OpenBD();
+    $procedimiento = "call sp_realizar_compra($IdUsuario);";
+    $datos = $enlace -> query($procedimiento);
+    CloseBD($enlace);
+    return $datos;
+}
 
 ?>

@@ -109,6 +109,45 @@ function MuestraTotal($IdUsuario)
     return mysqli_fetch_array($datos);
 }
 
+function ListarProductos()
+{
+    $datos = ListarProductosModel();   
+
+    if($datos -> num_rows > 0)
+    {
+        while($fila = mysqli_fetch_array($datos))
+        {
+            echo '<tr>';
+            echo '<td>' . $fila["id_producto"] . '</td>';
+            echo '<td>' . $fila["marca"] . '</td>';
+            echo '<td>' . $fila["nombre_prod"] . '</td>';
+            echo '<td>' . $fila["descrip_prod"] . '</td>';
+            echo '<td>' . $fila["cant_almacen"] . '</td>';
+            echo '<td>' . $fila["precio"] . '</td>';  
+            echo '<td class="product-image"><img src="../' . $fila["url"] . '" alt=""></td>';  
+            echo '<td>' . $fila["id_tipo_med"] . '</td>';  
+            echo '<td>' . $fila["id_farmacia"] . '</td>';
+            
+                echo '<td>'.'<a class="cart-btn" id="'.$fila["id_producto"].'" onclick="AgregarCarrito('.$fila["id_producto"].')">
+                                <i class="fas fa-shopping-cart"></i>Añadir al Carrito</a>'.'</td>';
+           
+            echo '</tr>';
+        }
+    }
+}
+
+function DatosProductosCarrito($IdUsuario)
+{
+    $datos = DatosProductosCarritoModel($IdUsuario);
+    return mysqli_fetch_array($datos);
+}
+
+function RealizarCompra($IdUsuario)
+{
+    $datos = RealizarCompraModel($IdUsuario);
+    return mysqli_fetch_array($datos);
+}
+
 
 ?>
 

@@ -128,7 +128,7 @@ if (session_status() == PHP_SESSION_NONE)
 										<?php
 											}
 										?>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+										<a class="mobile-hide search-bar-icon" href="View/busqueda.php"><i class="fas fa-search"></i></a>
 										<a class="usuario" href="View/login.php"><i class="fas fa-user"></i></a>
 										<!--<a class="usuario" href="login.php"><i class="fas fa-sign-out-alt"></i></a>-->
 									</div>

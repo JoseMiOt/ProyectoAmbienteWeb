@@ -236,6 +236,9 @@ if (session_status() == PHP_SESSION_NONE)
 						</div>
 					</div>
 				</div>
+				<div class="compra-button">
+					<a href="Compra.php" class="boxed-btn">Comprar</a>
+				</div>
 			</div>
 		</div>
 	</div>

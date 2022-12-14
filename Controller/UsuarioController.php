@@ -94,6 +94,10 @@ if(isset($_POST["btnActualizar"]))
         
     }
 
-
+    function DatosUsuarioCarrito($IdUsuario)
+    {
+        $datos = DatosUsuarioCarritoModel($IdUsuario);
+        return mysqli_fetch_array($datos);
+    }
 
 ?>
