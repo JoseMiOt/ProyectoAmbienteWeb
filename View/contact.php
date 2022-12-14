@@ -181,7 +181,7 @@ if (session_status() == PHP_SESSION_NONE)
 				<div class="col-lg-8 mb-5 mb-lg-0">
 					<div class="form-title">
 						<h2>¿Tienes alguna pregunta?</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!</p>
+						<p>Aquí te respondemos todo sobre nuestro sitio web y servicios que brindamos!</p>
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">

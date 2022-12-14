@@ -277,7 +277,7 @@ if (session_status() == PHP_SESSION_NONE)
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">	
 						<h3><span class="orange-text">Nuestros</span> Productos</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+						<p>FarmaWeb ofrece los mejores productos a los mejores precios del mercado, dando una amplia gama de medicamentos que se ocupa para el bienestar de tu familia.</p>
 					</div>
 				</div>
 			</div>
@@ -313,7 +313,7 @@ if (session_status() == PHP_SESSION_NONE)
                 <div class="content-column col-lg-6">
 					<h3><span class="orange-text">Oferta</span> del Mes</h3>
                     <h4>Cofal Fuerte</h4>
-                    <div class="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
+                    <div class="text">¿Dolores musculares? No será más problema con nuestra oferta del mes, el ungüento #1 del país para tratar dolores está disponible en nuestra farmacia a un precio unico para para que aproveches.</div>
                     <!--Countdown Timer-->
                     <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2022/12/25"><div class="counter-column"><div class="inner"><span class="count">00</span>Días</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Horas</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Segs</div></div></div></div>
                 	<a href="#" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</a>
@@ -336,7 +336,7 @@ if (session_status() == PHP_SESSION_NONE)
 							<div class="client-meta">
 								<h3>José Miranda <span>Desarrollador</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Encargado de diseñar la arquitectura y desarrollo de nuestro sitio. "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -350,7 +350,7 @@ if (session_status() == PHP_SESSION_NONE)
 							<div class="client-meta">
 								<h3>Mario Molina <span>Desarrollador</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Soluciona errores o problemas que puede presentarse en nuestra página "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -364,7 +364,7 @@ if (session_status() == PHP_SESSION_NONE)
 							<div class="client-meta">
 								<h3>Ricardo Villalobos  <span>Desarrollador</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Diseña y desarrolla nuevas funciones para la comodidad de nuestros usuarios. "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -378,7 +378,7 @@ if (session_status() == PHP_SESSION_NONE)
 							<div class="client-meta">
 								<h3>Zeneth Corella <span>Desarrollador</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Ayuda a mantener nuestra página actualizada. "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -405,8 +405,8 @@ if (session_status() == PHP_SESSION_NONE)
 					<div class="abt-text">
 						<p class="top-sub">Desde El Año 2022</p>
 						<h2>Somos <span class="orange-text">FarmaWeb</span></h2>
-						<p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
+						<p>Bienvenidos a FarmaWeb un sitio donde puedes encontrar tus productos de farmacia de manera rápida y eficiente desde la comodidad de tu casa. Ofrecemos un catálogo donde podrás ver nuestros productos disponibles y el precio, también presentamos ofertas que no te puedes perder cada mes.</p>
+						<p>El bienestar de tu familia es importante y aquí en FarmaWeb nos preocupamos de que puedas encontrar todo lo que necesitas para lograrlo.</p>
 						<a href="View/acerca.php" class="boxed-btn mt-4">Conócenos</a>
 					</div>
 				</div>
@@ -433,7 +433,7 @@ if (session_status() == PHP_SESSION_NONE)
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">	
 						<h3><span >Nuestras </span> <span class="orange-text"> Farmacias</span></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+						<p>Encuentra las mejores farmacias del país.</p>
 					</div>
 				</div>
 			</div>
@@ -448,7 +448,7 @@ if (session_status() == PHP_SESSION_NONE)
 								<span class="author"><i class="fas fa-capsules"></i> Farmacia</span>
 								<span class="date"><i class="fas fa-compass"></i> San José, Curridabat</span>
 							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
+							<p class="excerpt">Fishel la cadena más grande de Farmacias de Conveniencia de Costa Rica. Con regentes listos para brindarte todo lo que necesitás con la mejor atención.</p>
 							<a href="" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
@@ -462,7 +462,7 @@ if (session_status() == PHP_SESSION_NONE)
 								<span class="author"><i class="fas fa-capsules"></i> Farmacia</span>
 								<span class="date"><i class="fas fa-compass"></i> Cartago, Paraíso</span>
 							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
+							<p class="excerpt">Somos la cadena de farmacias de descuento más grande, con presencia en 8 países, con más de 300 puntos de venta especializados en atender al cliente.</p>
 							<a href="" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
@@ -476,7 +476,7 @@ if (session_status() == PHP_SESSION_NONE)
 								<span class="author"><i class="fas fa-capsules"></i> Farmacia</span>
 								<span class="date"><i class="fas fa-compass"></i> San José, Sabanilla</span>
 							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
+							<p class="excerpt">Encontrá el precio más bajo en nuestra farmacia en línea. Encontrá tus productos favoritos en nuestra farmacia en línea.</p>
 							<a href="" class="read-more-btn">Leer Más <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>

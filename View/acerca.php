@@ -193,7 +193,7 @@ if (session_status() == PHP_SESSION_NONE)
 									</div>
 									<div class="content">
 										<h3>Envío Gratis</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+										<p>Te ofrecemos envíos gratis a partir de cierta cantidad de compra para que estés seguro en casa.</p>
 									</div>
 								</div>
 							</div>
@@ -204,7 +204,7 @@ if (session_status() == PHP_SESSION_NONE)
 									</div>
 									<div class="content">
 										<h3>Excelentes Precios</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+										<p>Ofrecemos los mejores precios en nuestros productos para que no pierdas la oportunidad..</p>
 									</div>
 								</div>
 							</div>
@@ -215,7 +215,7 @@ if (session_status() == PHP_SESSION_NONE)
 									</div>
 									<div class="content">
 										<h3>Calidad En Productos</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+										<p>No te preocupes por la calidad de nuestros productos, nosotros te aseguramos 100% que son lo mejor del mercado..</p>
 									</div>
 								</div>
 							</div>
@@ -226,7 +226,7 @@ if (session_status() == PHP_SESSION_NONE)
 									</div>
 									<div class="content">
 										<h3>Reembolso</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+										<p>¿Tuviste problemas con algún producto? Cuéntanos.</p>
 									</div>
 								</div>
 							</div>
@@ -255,7 +255,7 @@ if (session_status() == PHP_SESSION_NONE)
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">
 						<h3>Nuestro <span class="orange-text">Equipo</span></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+						<p>Presentamos a nuestro diseñadores web que crearon nuestra página web.</p>
 					</div>
 				</div>
 			</div>
@@ -273,7 +273,7 @@ if (session_status() == PHP_SESSION_NONE)
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="single-team-item">
-						<div class="team-bg team-bg-1"></div>
+						<div class="team-bg team-bg-2"></div>
 						<h4>Mario Molina <span>Estudiante</span></h4>
 						<ul class="social-link-team">
 							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
@@ -284,7 +284,7 @@ if (session_status() == PHP_SESSION_NONE)
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="single-team-item">
-						<div class="team-bg team-bg-2"></div>
+						<div class="team-bg team-bg-3"></div>
 						<h4>Ricardo Villalobos <span>Estudiante</span></h4>
 						<ul class="social-link-team">
 							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
@@ -295,7 +295,7 @@ if (session_status() == PHP_SESSION_NONE)
 				</div>
 				<div class="col-lg-3 col-md-6 offset-md-3 offset-lg-0">
 					<div class="single-team-item">
-						<div class="team-bg team-bg-3"></div>
+						<div class="team-bg team-bg-4"></div>
 						<h4>Zeneth Corella <span>Estudiante</span></h4>
 						<ul class="social-link-team">
 							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
@@ -322,7 +322,7 @@ if (session_status() == PHP_SESSION_NONE)
 							<div class="client-meta">
 								<h3>José Miranda <span>Estudiante</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Encargado de diseñar la arquitectura y desarrollo de nuestro sitio. "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -336,7 +336,7 @@ if (session_status() == PHP_SESSION_NONE)
 							<div class="client-meta">
 								<h3>Mario Molina <span>Estudiante</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Soluciona errores o problemas que puede presentarse en nuestra página "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -350,7 +350,7 @@ if (session_status() == PHP_SESSION_NONE)
 							<div class="client-meta">
 								<h3>Ricardo Villalobos <span>Estudiante</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Diseña y desarrolla nuevas funciones para la comodidad de nuestros usuarios. "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -364,7 +364,7 @@ if (session_status() == PHP_SESSION_NONE)
 							<div class="client-meta">
 								<h3>Zeneth Corella <span>Estudiante</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Ayuda a mantener nuestra página actualizada "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
