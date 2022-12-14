@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3308
--- Tiempo de generación: 14-12-2022 a las 21:59:58
+-- Tiempo de generación: 15-12-2022 a las 00:49:43
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -139,19 +139,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualiza_cantidad` (IN `pId_pro
 UPDATE tb_carrito
 SET cant_comprar = pCantidad
 WHERE id_producto = pId_producto;
-
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualiza_perfil` (IN `pId_usuario` INT, IN `pNombre` VARCHAR(25), IN `pApellidos` VARCHAR(30), IN `pUsuario` VARCHAR(20), IN `pCorreo` VARCHAR(50), IN `pContrasenna` VARCHAR(255))   BEGIN
-
-UPDATE tb_usuario
-
-SET nombre = pNombre,
-apellidos = pApellidos,
-usuario = pUsuario,
-correo = pCorreo,
-clave = pContrasenna
-WHERE id_usuario = pId_usuario;
 
 END$$
 
@@ -305,6 +292,14 @@ AND A.id_producto = B.id_producto;
 
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_calcular_total_variable` (IN `pId_usuario` INT, OUT `result` INT)   BEGIN
+	SELECT 
+       SUM((B.precio*A.cant_comprar))+1500 AS Total
+	FROM tb_carrito A, tb_producto B
+	WHERE id_usuario = pId_usuario
+	AND A.id_producto = B.id_producto into result;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cantidad_datos_tablas` (OUT `pBitacora` INT, OUT `pPrecaucion` INT, OUT `pDireccion` INT, OUT `pRoles` INT, OUT `pUsuarios` INT, OUT `pCanton` INT, OUT `pDistrtos` INT, OUT `pProductos` INT, OUT `pCategorias` INT, OUT `pFacturas` INT, OUT `pProvincias` INT, OUT `pDetalles` INT, OUT `pFarmacia` INT)   BEGIN
 
 SELECT COUNT(*) INTO pBitacora FROM tb_bitacora ;
@@ -454,14 +449,6 @@ FROM tb_usuario;
 
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consultar_usuario_id` (IN `pIdUsuario` INT)   BEGIN
-
-SELECT * 
-FROM tb_usuario
-WHERE id_usuario = pIdUsuario;
-
-END$$
-
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_consulta_carrito` (IN `pId_Usuario` INT)   BEGIN
 
 SELECT C.id_carrito,C.cant_comprar,C.id_usuario, P.*
@@ -507,6 +494,13 @@ FROM tb_producto
 ORDER BY RAND()
 LIMIT 3;
 
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_datos_usuario_carrito` (IN `pId_usuario` INT)   BEGIN
+	SELECT concat(a.nombre, ' ', a.apellidos) AS Nombre, 
+       a.correo AS Correo
+	FROM tb_usuario A
+	WHERE id_usuario = pId_usuario;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_eliminar_bitacora` (IN `pid_bitacora` INT)   BEGIN
@@ -566,6 +560,29 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_elimina_producto` (IN `pId_produ
 DELETE FROM tb_producto
 WHERE id_producto = pId_producto;
 
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_realizar_compra` (IN `id_usuario_v` INT)   BEGIN
+	declare totalcompra int;
+    SET totalcompra =0;
+
+    call sp_calcular_total_variable(id_usuario_v, totalcompra);
+    insert into tb_factura(id_factura,fecha,id_usuario, total)
+    values (null, sysdate(), id_usuario_v, totalcompra);
+    call sp_vaciar_carrito(id_usuario_v);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_total_articulos_carrito` (IN `pId_usuario` INT)   BEGIN
+	select SUM(A.cant_comprar) as cantidad, 
+       SUM((B.precio*A.cant_comprar))+1500 AS Total
+	FROM tb_carrito A, tb_producto B
+	WHERE id_usuario = pId_usuario
+	AND A.id_producto = B.id_producto;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_vaciar_carrito` (IN `pId_usuario` INT)   BEGIN
+DELETE FROM tb_carrito
+WHERE id_usuario = pId_usuario;
 END$$
 
 DELIMITER ;
@@ -700,10 +717,7 @@ CREATE TABLE `tb_carrito` (
 --
 
 INSERT INTO `tb_carrito` (`id_carrito`, `cant_comprar`, `id_usuario`, `id_producto`) VALUES
-(214, 1, 1, 5),
-(217, 2, 1, 4),
-(218, 1, 1, 8),
-(219, 2, 1, 3);
+(0, 2, 1, 8);
 
 -- --------------------------------------------------------
 
@@ -1258,8 +1272,29 @@ INSERT INTO `tb_distrito` (`id_distrito`, `distrito`, `id_canton`) VALUES
 CREATE TABLE `tb_factura` (
   `id_factura` int(11) NOT NULL,
   `fecha` datetime NOT NULL,
-  `id_usuario` int(11) NOT NULL
+  `id_usuario` int(11) NOT NULL,
+  `total` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tb_factura`
+--
+
+INSERT INTO `tb_factura` (`id_factura`, `fecha`, `id_usuario`, `total`) VALUES
+(1, '2022-12-14 04:13:51', 1, NULL),
+(2, '2022-12-14 04:16:08', 1, NULL),
+(3, '2022-12-14 04:20:57', 1, NULL),
+(4, '2022-12-14 04:21:30', 1, NULL),
+(5, '2022-12-14 04:21:58', 1, NULL),
+(6, '2022-12-14 04:22:24', 1, NULL),
+(7, '2022-12-14 04:23:09', 1, NULL),
+(8, '2022-12-14 04:23:14', 1, NULL),
+(9, '2022-12-14 04:25:43', 1, NULL),
+(10, '2022-12-14 04:27:47', 1, NULL),
+(11, '2022-12-14 04:29:08', 1, NULL),
+(12, '2022-12-14 04:38:29', 1, NULL),
+(13, '2022-12-14 17:10:20', 1, '31054.00'),
+(14, '2022-12-14 17:12:23', 1, '31054.00');
 
 -- --------------------------------------------------------
 
@@ -1518,7 +1553,7 @@ ALTER TABLE `tb_canton`
 -- AUTO_INCREMENT de la tabla `tb_carrito`
 --
 ALTER TABLE `tb_carrito`
-  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222;
+  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_categoria_producto`
@@ -1548,7 +1583,7 @@ ALTER TABLE `tb_distrito`
 -- AUTO_INCREMENT de la tabla `tb_factura`
 --
 ALTER TABLE `tb_factura`
-  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_factura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_farmacia`
@@ -1566,7 +1601,7 @@ ALTER TABLE `tb_precaucion`
 -- AUTO_INCREMENT de la tabla `tb_producto`
 --
 ALTER TABLE `tb_producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_provincia`
